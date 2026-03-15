@@ -9,6 +9,11 @@
   <meta property="og:description" content="We help UK and India businesses grow their brand online. Social media, content, paid ads, and brand strategy.">
   <meta property="og:url" content="https://cnrdigital.co.uk">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://cnrdigital.co.uk/assets/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CNR Digital — Social Media Marketing Agency">
+  <meta name="twitter:description" content="We help UK and India businesses grow their brand online.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -719,6 +724,21 @@
 
     .footer-legal a:hover { color: var(--muted); }
 
+    /* ── SCROLL REVEAL ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
     /* ── RESPONSIVE ──────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
@@ -786,7 +806,7 @@
       <circle cx="350" cy="350" r="180" stroke-width="0.5" opacity="0.07"/>
       <circle cx="350" cy="350" r="110" stroke-width="0.8" opacity="0.15"/>
     </svg>
-    <div class="hero-content">
+    <div class="hero-content reveal visible">
       <p class="hero-eyebrow">Social Media Marketing Agency</p>
       <h1 class="hero-heading">
         Grow Your<br>
@@ -810,12 +830,12 @@
 
   <!-- ── SERVICES ──────────────────────────────── -->
   <section id="services">
-    <div class="section-header">
+    <div class="section-header reveal">
       <p class="section-eyebrow">What we do</p>
       <h2 class="section-title">Services Built for<br><span class="gold">Modern Brands</span></h2>
     </div>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card reveal reveal-delay-1">
         <div class="service-number">01</div>
         <h3 class="service-title">Social Media Management</h3>
         <p class="service-desc">
@@ -828,7 +848,7 @@
           <span class="tag">X / Twitter</span>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal reveal-delay-2">
         <div class="service-number">02</div>
         <h3 class="service-title">Content Creation</h3>
         <p class="service-desc">
@@ -841,7 +861,7 @@
           <span class="tag">Reels</span>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal reveal-delay-3">
         <div class="service-number">03</div>
         <h3 class="service-title">Paid Advertising</h3>
         <p class="service-desc">
@@ -853,7 +873,7 @@
           <span class="tag">LinkedIn Ads</span>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card reveal reveal-delay-4">
         <div class="service-number">04</div>
         <h3 class="service-title">Brand Strategy</h3>
         <p class="service-desc">
@@ -871,7 +891,7 @@
   <!-- ── WHY CNR ────────────────────────────────── -->
   <section id="why">
     <div class="why-inner">
-      <div class="why-left">
+      <div class="why-left reveal">
         <div class="section-header">
           <p class="section-eyebrow">Why CNR Digital</p>
           <h2 class="section-title">Strategy First.<br><span class="gold">Results Always.</span></h2>
@@ -889,7 +909,7 @@
           <li>No lock-in contracts — results keep you with us</li>
         </ul>
       </div>
-      <div class="why-right">
+      <div class="why-right reveal reveal-delay-2">
         <div class="stat-card">
           <div class="stat-number">2+</div>
           <div class="stat-label">Markets<br>Served</div>
@@ -917,14 +937,14 @@
       <h2 class="section-title">Two Markets.<br><span class="gold">One Agency.</span></h2>
     </div>
     <div class="markets-inner">
-      <div class="market-card">
+      <div class="market-card reveal reveal-delay-1">
         <div class="market-flag">&#127468;&#127463;</div>
         <h3 class="market-name">United Kingdom</h3>
         <p class="market-desc">
           Supporting UK-based SMEs, startups, and established businesses with social media strategies built for British audiences — competitive, compliant, and conversion-focused.
         </p>
       </div>
-      <div class="market-card">
+      <div class="market-card reveal reveal-delay-2">
         <div class="market-flag">&#127470;&#127475;</div>
         <h3 class="market-name">India</h3>
         <p class="market-desc">
@@ -936,14 +956,17 @@
 
   <!-- ── CTA ───────────────────────────────────── -->
   <section id="contact">
-    <div class="cta-inner">
+    <div class="cta-inner reveal">
       <p class="cta-eyebrow">Get started</p>
       <h2 class="cta-heading">Ready to Grow<br>Your Brand?</h2>
       <p class="cta-sub">
         Book a free 30-minute consultation. No obligation, no hard sell — just honest advice on what will move the needle for your business.
       </p>
-      <form class="cta-form" onsubmit="handleSubmit(event)">
-        <input type="email" placeholder="Your email address" required>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io -->
+      <form class="cta-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="hidden" name="_subject" value="New consultation request — CNR Digital">
+        <input type="hidden" name="_next" value="https://cnrdigital.co.uk/?thanks=1">
         <button type="submit">Let's Talk</button>
       </form>
       <p class="cta-note">Or email us directly at <a href="mailto:hello@cnrdigital.co.uk" style="color:var(--gold);text-decoration:none;">hello@cnrdigital.co.uk</a></p>
@@ -991,7 +1014,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 CNR Digital. All rights reserved. Registered in the UK.</p>
+        <p class="footer-copy">&copy; <span id="year"></span> CNR Digital. All rights reserved. Registered in the UK.</p>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -1001,26 +1024,25 @@
   </footer>
 
   <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Mobile nav toggle
     const burger = document.getElementById('burger');
     const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
-    // Email form (placeholder — wire up to a real service later)
-    function handleSubmit(e) {
-      e.preventDefault();
-      const input = e.target.querySelector('input');
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'Sent!';
-      btn.style.background = '#2a7a2a';
-      input.value = '';
-      setTimeout(() => {
-        btn.textContent = "Let's Talk";
-        btn.style.background = '';
-      }, 3000);
-    }
+    // Close mobile nav on outside click
+    document.addEventListener('click', (e) => {
+      if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+      }
+    });
 
     // Nav scroll effect
     window.addEventListener('scroll', () => {
@@ -1029,6 +1051,27 @@
         ? 'rgba(201,168,76,0.2)'
         : 'rgba(201,168,76,0.12)';
     });
+
+    // "Thanks" banner after form submit redirect
+    if (new URLSearchParams(location.search).get('thanks')) {
+      const banner = document.createElement('div');
+      banner.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#122040;border:1px solid #c9a84c;color:#c9a84c;padding:14px 28px;font-size:12px;letter-spacing:2px;text-transform:uppercase;z-index:999;';
+      banner.textContent = "Thanks — we'll be in touch soon.";
+      document.body.appendChild(banner);
+      setTimeout(() => banner.remove(), 5000);
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
