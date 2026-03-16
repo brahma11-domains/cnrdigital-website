@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<svg id="cnr-logo" width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="pg" cx="38%" cy="32%" r="72%">
       <stop offset="0%" stop-color="#1a3060"/>
@@ -10,14 +10,11 @@
       <stop offset="55%" stop-color="#c9a84c"/>
       <stop offset="100%" stop-color="#a8852e"/>
     </linearGradient>
-    <clipPath id="circle-clip">
-      <circle cx="200" cy="200" r="198"/>
-    </clipPath>
   </defs>
-  <!-- Circular background -->
-  <rect width="400" height="400" fill="url(#pg)" clip-path="url(#circle-clip)"/>
-  <!-- Ring -->
-  <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" clip-path="url(#circle-clip)"/>
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#pg)"/>
+  <!-- Subtle ring -->
+  <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.4"/>
   <!-- CNR -->
   <text x="200" y="226"
         font-family="Georgia, serif"
@@ -25,8 +22,7 @@
         font-weight="700"
         text-anchor="middle"
         fill="url(#gd)"
-        letter-spacing="4"
-        clip-path="url(#circle-clip)">CNR</text>
+        letter-spacing="4">CNR</text>
   <!-- Gold divider -->
   <line x1="68" y1="258" x2="332" y2="258" stroke="#c9a84c" stroke-width="0.9" opacity="0.65"/>
   <!-- DIGITAL -->
@@ -36,6 +32,5 @@
         font-weight="400"
         text-anchor="middle"
         fill="url(#gd)"
-        letter-spacing="10"
-        clip-path="url(#circle-clip)">DIGITAL</text>
+        letter-spacing="10">DIGITAL</text>
 </svg>
