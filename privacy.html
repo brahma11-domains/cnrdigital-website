@@ -1,186 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — CNR Digital</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Montserrat',sans-serif; background:#f5f3ee; color:#1a1a1a; font-size:15px; line-height:1.8; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — CNR Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #0f2040;
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --cream: #f7f5f0;
+      --text: #1a1a2e;
+      --muted: #5a5a72;
+      --border: #e2ddd4;
+      --white: #ffffff;
+    }
 
-  header {
-    background:#0a1628;
-    padding:20px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  header a { text-decoration:none; }
-  .logo { font-family:'EB Garamond',serif; font-size:22px; font-weight:700; color:#c9a84c; letter-spacing:2px; }
-  .logo span { font-size:12px; color:rgba(255,255,255,0.5); font-weight:400; letter-spacing:3px; display:block; }
-  header nav a { color:rgba(255,255,255,0.6); font-size:12px; letter-spacing:1px; text-decoration:none; margin-left:24px; }
-  header nav a:hover { color:#c9a84c; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  .hero {
-    background:#0a1628;
-    padding:60px 40px 40px;
-    border-bottom:1px solid rgba(201,168,76,0.2);
-  }
-  .hero h1 { font-family:'EB Garamond',serif; font-size:42px; color:#c9a84c; font-weight:700; margin-bottom:8px; }
-  .hero p { font-size:13px; color:rgba(255,255,255,0.5); letter-spacing:1px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-  .container { max-width:760px; margin:0 auto; padding:60px 40px; }
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
 
-  h2 { font-family:'EB Garamond',serif; font-size:24px; font-weight:700; color:#0a1628; margin:40px 0 12px; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:8px; }
-  h2:first-child { margin-top:0; }
-  p { margin-bottom:14px; color:#333; }
-  ul { margin:0 0 14px 20px; }
-  ul li { margin-bottom:6px; color:#333; }
-  a { color:#0a1628; }
-  strong { color:#0a1628; }
+    /* ── HERO BAND ── */
+    .hero-band {
+      background: var(--navy);
+      padding: 56px 40px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .hero-band h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-band p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .last-updated {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 6px 16px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
 
-  .highlight {
-    background:white;
-    border-left:3px solid #c9a84c;
-    padding:16px 20px;
-    margin:20px 0;
-    border-radius:0 4px 4px 0;
-    font-size:14px;
-  }
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  .contact-box {
-    background:#0a1628;
-    color:white;
-    padding:24px 28px;
-    border-radius:6px;
-    margin-top:40px;
-  }
-  .contact-box h3 { font-family:'EB Garamond',serif; font-size:20px; color:#c9a84c; margin-bottom:12px; }
-  .contact-box p { color:rgba(255,255,255,0.7); margin-bottom:6px; font-size:14px; }
-  .contact-box a { color:#c9a84c; }
+    /* ── TOC ── */
+    .toc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 48px 0 40px;
+    }
+    .toc-card h2 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .toc-card ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+    .toc-card ol li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc-card ol li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .toc-card ol li a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .toc-card ol li a:hover { color: var(--gold); }
 
-  footer {
-    background:#0a1628;
-    color:rgba(255,255,255,0.3);
-    text-align:center;
-    padding:20px;
-    font-size:11px;
-    letter-spacing:1px;
-    margin-top:60px;
-  }
+    /* ── SECTIONS ── */
+    .policy-section {
+      margin-bottom: 44px;
+      scroll-margin-top: 80px;
+    }
+    .section-number {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .policy-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section p {
+      font-size: 15px;
+      color: #2e2e44;
+      margin-bottom: 14px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
 
-  @media(max-width:600px) {
-    .container { padding:40px 20px; }
-    header { padding:16px 20px; }
-    .hero { padding:40px 20px 30px; }
-    .hero h1 { font-size:32px; }
-  }
-</style>
+    /* ── LISTS ── */
+    .policy-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+    .policy-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0ede8;
+      font-size: 15px;
+      color: #2e2e44;
+    }
+    .policy-list li:last-child { border-bottom: none; }
+    .policy-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── HIGHLIGHT BOXES ── */
+    .info-box {
+      background: #fff9ed;
+      border: 1px solid #fcd34d;
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #78490a;
+    }
+    .info-box strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: #92400e;
+    }
+
+    /* ── META SPECIFIC SECTION ── */
+    .meta-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 20px;
+    }
+    .meta-section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .meta-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: #e8f0fe;
+      color: #1d4ed8;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-top: 48px;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+    }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .contact-email:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer .footer-logo {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    footer .footer-logo span { color: var(--gold); }
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+    footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero-band { padding: 40px 20px 36px; }
+      .toc-card ol { grid-template-columns: 1fr; }
+      .contact-card { padding: 28px 24px; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <a href="/">
-    <div class="logo">CNR Digital<span>Social Media Marketing</span></div>
-  </a>
-  <nav>
-    <a href="/">Home</a>
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">CNR <span>Digital</span></a>
+  <div class="nav-links">
     <a href="/#services">Services</a>
-    <a href="/cdn-cgi/l/email-protection#2f474a4343406f4c415d4b4648465b4e43014c40015a44">Contact</a>
-  </nav>
-</header>
+    <a href="/#how">How it works</a>
+    <a href="/#contact">Contact</a>
+    <a href="/privacy" style="color:rgba(255,255,255,0.9);">Privacy</a>
+  </div>
+</nav>
 
-<div class="hero">
+<!-- HERO BAND -->
+<div class="hero-band">
+  <p class="hero-eyebrow">Legal &amp; Compliance</p>
   <h1>Privacy Policy</h1>
-  <p>Last updated: 16 March 2026</p>
+  <p>How CNR Digital collects, uses, and protects your personal information.</p>
+  <span class="last-updated">Last updated: 16 March 2025</span>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="container">
 
-  <div class="highlight">
-    CNR Digital is committed to protecting your personal data. This policy explains what data we collect, why we collect it, and how we use it — in plain English.
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-card">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#information-we-collect">Information we collect</a></li>
+      <li><a href="#how-we-use">How we use your information</a></li>
+      <li><a href="#meta-platforms">Meta Platforms &amp; BrandEngine</a></li>
+      <li><a href="#data-sharing">Data sharing</a></li>
+      <li><a href="#data-retention">Data retention</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
   </div>
 
-  <h2>1. Who We Are</h2>
-  <p><strong>CNR Digital</strong> is a social media marketing agency based in the United Kingdom, providing social media management, content creation, paid advertising, and brand strategy services to businesses worldwide.</p>
-  <p><strong>Data Controller:</strong> Brahmaputhra Reddy Chinthaparthi, CNR Digital<br>
-  <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#09616c656566496a677b6d606e607d6865276a66277c62"><span class="__cf_email__" data-cfemail="a4ccc1c8c8cbe4c7cad6c0cdc3cdd0c5c88ac7cb8ad1cf">[email&#160;protected]</span></a><br>
-  <strong>Website:</strong> <a href="https://cnrdigital.co.uk">cnrdigital.co.uk</a></p>
+  <!-- 1. WHO WE ARE -->
+  <div class="policy-section" id="who-we-are">
+    <span class="section-number">01</span>
+    <h2>Who we are</h2>
+    <p>CNR Digital ("we", "us", "our") is a social media marketing agency based in Aylesbury, United Kingdom, operated by Brahmaputhra Reddy Chinthaparthi. We provide social media management, content creation, paid advertising, and brand strategy services to small businesses in the UK and India.</p>
+    <p>Our website is <strong>cnrdigital.co.uk</strong>. For any privacy-related enquiries, please contact us at <a href="mailto:hello@cnrdigital.co.uk" style="color: var(--navy); font-weight: 600;">hello@cnrdigital.co.uk</a>.</p>
+    <p>We are committed to protecting your personal data and complying with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+  </div>
 
-  <h2>2. What Data We Collect</h2>
-  <p>We may collect the following types of personal data:</p>
-  <ul>
-    <li><strong>Contact information</strong> — your name, email address, phone number, and business name when you contact us or book a consultation</li>
-    <li><strong>Communications</strong> — messages you send us via email, contact forms, or social media</li>
-    <li><strong>Social media account data</strong> — when you grant us access to manage your social media accounts, we access data necessary to post content and view analytics on your behalf</li>
-    <li><strong>Usage data</strong> — basic analytics about how visitors use our website (pages visited, time spent)</li>
-  </ul>
+  <!-- 2. INFORMATION WE COLLECT -->
+  <div class="policy-section" id="information-we-collect">
+    <span class="section-number">02</span>
+    <h2>Information we collect</h2>
+    <p>We collect personal information in the following ways:</p>
+    <ul class="policy-list">
+      <li><strong>Contact form submissions</strong> — When you fill in our booking form, we collect your name, email address, business name, and any message you provide.</li>
+      <li><strong>Email correspondence</strong> — When you email us directly, we retain that correspondence including your email address and any personal details you share.</li>
+      <li><strong>Client onboarding</strong> — If you become a client, we may collect additional business and billing information necessary to provide our services.</li>
+      <li><strong>Social media interactions</strong> — If you interact with our Facebook or Instagram pages, those platforms collect data in accordance with their own privacy policies.</li>
+      <li><strong>Website analytics</strong> — We may collect anonymised usage data such as pages visited and time spent on site to improve our website.</li>
+    </ul>
+    <p>We do not collect sensitive personal data (such as health, financial, or identity documents) unless you explicitly provide it and it is necessary for the service.</p>
+  </div>
 
-  <h2>3. How We Use Your Data</h2>
-  <p>We use your personal data for the following purposes:</p>
-  <ul>
-    <li>To respond to your enquiries and provide the services you request</li>
-    <li>To manage and publish content on social media accounts you authorise us to manage</li>
-    <li>To send you service-related communications</li>
-    <li>To improve our website and services</li>
-    <li>To comply with our legal obligations</li>
-  </ul>
+  <!-- 3. HOW WE USE YOUR INFORMATION -->
+  <div class="policy-section" id="how-we-use">
+    <span class="section-number">03</span>
+    <h2>How we use your information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul class="policy-list">
+      <li>To respond to your enquiry and book your free consultation call</li>
+      <li>To deliver and manage social media marketing services for clients</li>
+      <li>To communicate updates, reports, or service-related information to clients</li>
+      <li>To improve our website and understand how visitors use it</li>
+      <li>To comply with our legal and regulatory obligations</li>
+    </ul>
+    <p>We will never use your information for unsolicited marketing without your consent. The legal basis for processing your data is <strong>legitimate interest</strong> (responding to enquiries) and <strong>contractual necessity</strong> (delivering client services).</p>
+  </div>
 
-  <h2>4. Legal Basis for Processing (UK GDPR)</h2>
-  <p>We process your personal data under the following legal bases:</p>
-  <ul>
-    <li><strong>Contract</strong> — processing necessary to deliver services you have engaged us for</li>
-    <li><strong>Legitimate interests</strong> — responding to enquiries and improving our services</li>
-    <li><strong>Consent</strong> — where you have given us explicit permission (e.g. marketing communications)</li>
-    <li><strong>Legal obligation</strong> — where we are required to process data by law</li>
-  </ul>
+  <!-- 4. META PLATFORMS & BRANDENGINE -->
+  <div class="policy-section" id="meta-platforms">
+    <span class="section-number">04</span>
+    <h2>Meta Platforms &amp; BrandEngine</h2>
+    <p>CNR Digital uses an internal automation tool called <strong>BrandEngine</strong> to schedule and publish social media content on behalf of our clients via the Meta Graph API. This section explains how we handle data in connection with Meta's platforms (Facebook and Instagram).</p>
 
-  <h2>5. Social Media & Third-Party Platforms</h2>
-  <p>Our BrandEngine platform integrates with Meta (Facebook and Instagram) APIs to manage social media content on behalf of clients. When clients authorise our platform:</p>
-  <ul>
-    <li>We access only the permissions necessary to publish and manage content</li>
-    <li>We do not sell or share your social media data with third parties</li>
-    <li>We do not use your data for advertising purposes beyond the services agreed</li>
-    <li>You can revoke our access at any time through your Facebook or Instagram settings</li>
-  </ul>
-  <p>Our use of Meta APIs is governed by the <a href="https://developers.facebook.com/terms/" target="_blank">Meta Platform Terms</a> and <a href="https://developers.facebook.com/policy/" target="_blank">Meta Developer Policies</a>.</p>
+    <div class="meta-section">
+      <h3>What BrandEngine does <span class="meta-badge">Meta App</span></h3>
+      <p style="font-size:14px; color:#2e2e44; margin-top:8px;">BrandEngine is a private internal tool used exclusively by CNR Digital. It connects to Meta's Graph API using authorised access tokens to:</p>
+      <ul class="policy-list" style="margin-top:10px;">
+        <li>Publish posts (text, images, and links) to Facebook Pages managed by CNR Digital on behalf of clients</li>
+        <li>Publish posts to Instagram Business accounts connected to those Pages</li>
+        <li>Retrieve basic page insights and engagement metrics for reporting purposes</li>
+      </ul>
+    </div>
 
-  <h2>6. Data Sharing</h2>
-  <p>We do not sell your personal data. We may share data with:</p>
-  <ul>
-    <li><strong>Service providers</strong> — trusted tools we use to deliver our services (e.g. email providers, analytics tools), bound by confidentiality agreements</li>
-    <li><strong>Legal authorities</strong> — where required by law</li>
-  </ul>
+    <div class="info-box" style="margin-top:20px;">
+      <strong>Important — Third-party data</strong>
+      BrandEngine does not collect, store, or share any personal data from Facebook or Instagram users. The tool only publishes content and reads aggregated, anonymised page metrics (such as reach and impressions). No user-level data from Meta's platforms is accessed, retained, or transmitted to any third party.
+    </div>
 
-  <h2>7. Data Retention</h2>
-  <p>We retain your personal data only as long as necessary to provide our services or as required by law. Client data is typically retained for the duration of our working relationship plus 6 years for accounting and legal purposes. You may request deletion at any time.</p>
+    <p>BrandEngine uses Meta's official APIs under the <a href="https://developers.facebook.com/terms" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Meta Platform Terms</a> and <a href="https://developers.facebook.com/policy" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Meta Developer Policies</a>. Access tokens are stored securely in encrypted environment files and are never shared with third parties.</p>
 
-  <h2>8. Your Rights (UK GDPR)</h2>
-  <p>Under UK data protection law, you have the right to:</p>
-  <ul>
-    <li><strong>Access</strong> — request a copy of the personal data we hold about you</li>
-    <li><strong>Rectification</strong> — request correction of inaccurate data</li>
-    <li><strong>Erasure</strong> — request deletion of your data ("right to be forgotten")</li>
-    <li><strong>Restriction</strong> — request that we limit processing of your data</li>
-    <li><strong>Portability</strong> — receive your data in a portable format</li>
-    <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
-    <li><strong>Withdraw consent</strong> — at any time where processing is based on consent</li>
-  </ul>
-  <p>To exercise any of these rights, contact us at <a href="/cdn-cgi/l/email-protection#c6aea3aaaaa986a5a8b4a2afa1afb2a7aae8a5a9e8b3ad"><span class="__cf_email__" data-cfemail="026a676e6e6d42616c70666b656b76636e2c616d2c7769">[email&#160;protected]</span></a>. We will respond within 30 days.</p>
+    <p>If you authorise CNR Digital to manage your Facebook Page or Instagram account, you can revoke access at any time through your <strong>Facebook Settings → Business Integrations</strong> or via Meta Business Suite. Upon revocation, we will immediately cease automated posting to your accounts.</p>
 
-  <h2>9. Cookies</h2>
-  <p>Our website may use essential cookies to ensure the site functions correctly. We do not use tracking or advertising cookies. By using our website you consent to essential cookies being placed on your device.</p>
+    <p>Meta's own privacy practices are governed by Meta's <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Privacy Policy</a>.</p>
+  </div>
 
-  <h2>10. Security</h2>
-  <p>We take appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or disclosure. All data is transmitted using HTTPS encryption.</p>
+  <!-- 5. DATA SHARING -->
+  <div class="policy-section" id="data-sharing">
+    <span class="section-number">05</span>
+    <h2>Data sharing</h2>
+    <p>We do not sell, rent, or trade your personal information to third parties. We may share data with:</p>
+    <ul class="policy-list">
+      <li><strong>Service providers</strong> — Trusted tools we use to operate (e.g. email, hosting). These are bound by their own privacy policies and data processing agreements.</li>
+      <li><strong>Legal requirements</strong> — If required by law, court order, or regulatory authority in the UK.</li>
+    </ul>
+    <p>Any third-party tools we use (such as Google, Cloudflare, or Meta) process data under their own privacy policies. We only use reputable providers who meet appropriate data protection standards.</p>
+  </div>
 
-  <h2>11. International Transfers</h2>
-  <p>Our services are provided from the United Kingdom. If you are based outside the UK, your data may be processed in the UK, which maintains adequate data protection standards. We ensure any international transfers comply with applicable data protection laws.</p>
+  <!-- 6. DATA RETENTION -->
+  <div class="policy-section" id="data-retention">
+    <span class="section-number">06</span>
+    <h2>Data retention</h2>
+    <p>We retain your personal data only for as long as necessary:</p>
+    <ul class="policy-list">
+      <li><strong>Enquiries</strong> — Contact form and email enquiries are retained for up to 12 months.</li>
+      <li><strong>Active clients</strong> — Client data is retained for the duration of the contract and up to 3 years afterwards for legal and financial record-keeping.</li>
+      <li><strong>API access tokens</strong> — Meta access tokens are stored only as long as the client relationship is active and deleted upon contract termination.</li>
+    </ul>
+    <p>You can request deletion of your data at any time (see Your Rights below).</p>
+  </div>
 
-  <h2>12. Changes to This Policy</h2>
-  <p>We may update this privacy policy from time to time. We will notify you of significant changes by email or by posting a notice on our website. The date at the top of this page shows when the policy was last updated.</p>
+  <!-- 7. YOUR RIGHTS -->
+  <div class="policy-section" id="your-rights">
+    <span class="section-number">07</span>
+    <h2>Your rights</h2>
+    <p>Under UK GDPR, you have the following rights regarding your personal data:</p>
+    <ul class="policy-list">
+      <li><strong>Right of access</strong> — Request a copy of the personal data we hold about you.</li>
+      <li><strong>Right to rectification</strong> — Ask us to correct inaccurate or incomplete data.</li>
+      <li><strong>Right to erasure</strong> — Request deletion of your personal data ("right to be forgotten").</li>
+      <li><strong>Right to restrict processing</strong> — Ask us to limit how we use your data.</li>
+      <li><strong>Right to data portability</strong> — Request your data in a portable format.</li>
+      <li><strong>Right to object</strong> — Object to processing based on legitimate interests.</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:hello@cnrdigital.co.uk" style="color:var(--navy);font-weight:600;">hello@cnrdigital.co.uk</a>. We will respond within 30 days. If you are unsatisfied with our response, you have the right to lodge a complaint with the <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;">Information Commissioner's Office (ICO)</a>.</p>
+  </div>
 
-  <h2>13. Complaints</h2>
-  <p>If you have concerns about how we handle your data, please contact us first at <a href="/cdn-cgi/l/email-protection#9ff7faf3f3f0dffcf1edfbf6f8f6ebfef3b1fcf0b1eaf4"><span class="__cf_email__" data-cfemail="91f9f4fdfdfed1f2ffe3f5f8f6f8e5f0fdbff2febfe4fa">[email&#160;protected]</span></a>. You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>.<
+  <!-- 8. COOKIES -->
+  <div class="policy-section" id="cookies">
+    <span class="section-number">08</span>
+    <h2>Cookies</h2>
+    <p>Our website may use cookies to improve your browsing experience. Cookies are small text files stored on your device. We use:</p>
+    <ul class="policy-list">
+      <li><strong>Strictly necessary cookies</strong> — Required for the website to function. These cannot be disabled.</li>
+      <li><strong>Analytics cookies</strong> — Anonymous usage data to help us understand how visitors use the site (e.g. pages visited, time on site). No personally identifiable information is collected.</li>
+    </ul>
+    <p>You can control cookies through your browser settings. Disabling cookies will not prevent you from using our website but may affect some functionality.</p>
+  </div>
+
+  <!-- 9. SECURITY -->
+  <div class="policy-section" id="security">
+    <span class="section-number">09</span>
+    <h2>Security</h2>
+    <p>We take the security of your data seriously. Our measures include:</p>
+    <ul class="policy-list">
+      <li>All API credentials and access tokens are stored in encrypted environment files, never in source code or public repositories</li>
+      <li>Our website is served over HTTPS with SSL/TLS encryption via Cloudflare</li>
+      <li>All key accounts are protected with multi-factor authentication (MFA)</li>
+      <li>We limit access to personal data to only those who need it to perform their role</li>
+    </ul>
+    <p>While we take every reasonable precaution, no internet transmission is 100% secure. If you have any concerns about data security, please contact us immediately.</p>
+  </div>
+
+  <!-- 10. CONTACT -->
+  <div class="policy-section" id="contact">
+    <span class="section-number">10</span>
+    <h2>Contact us</h2>
+    <p>If you have any questions about this Privacy Policy, wish to exercise your data rights, or want to report a privacy concern, please get in touch:</p>
+    <p><strong>CNR Digital</strong><br>
+    Aylesbury, United Kingdom<br>
+    Email: <a href="mailto:hello@cnrdigital.co.uk" style="color:var(--navy);font-weight:600;">hello@cnrdigital.co.uk</a><br>
+    Website: <a href="https://cnrdigital.co.uk" style="color:var(--navy);font-weight:600;">cnrdigital.co.uk</a></p>
+    <p style="margin-top:16px; font-size:14px; color:var(--muted);">This policy was last reviewed on 16 March 2025. We may update it from time to time — the latest version will always be available at this URL.</p>
+  </div>
+
+  <!-- CONTACT CTA CARD -->
+  <div class="contact-card">
+    <div>
+      <h3>Questions about your data?</h3>
+      <p>We're happy to help — reach out and we'll respond within 48 hours.</p>
+    </div>
+    <a href="mailto:hello@cnrdigital.co.uk" class="contact-email">
+      ✉ hello@cnrdigital.co.uk
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CNR <span>Digital</span></div>
+  <p>© 2025 CNR Digital · Aylesbury, UK</p>
+  <div style="display:flex; gap:20px;">
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="mailto:hello@cnrdigital.co.uk">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
