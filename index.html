@@ -41,11 +41,14 @@ nav {
   display:flex; align-items:center; justify-content:space-between;
 }
 .nav-logo {
-  font-family:'EB Garamond',serif;
-  font-size:22px; font-weight:700;
-  color:var(--gold);
-  letter-spacing:2px;
+  display:flex; align-items:center;
   text-decoration:none;
+  height:44px;
+}
+.nav-logo svg {
+  height:44px;
+  width:44px;
+  flex-shrink:0;
 }
 .nav-links { display:flex; gap:32px; align-items:center; }
 .nav-links a {
@@ -439,9 +442,12 @@ footer {
   border-top:1px solid var(--border);
 }
 .footer-logo {
-  font-family:'EB Garamond',serif;
-  font-size:20px; color:var(--gold);
-  letter-spacing:2px;
+  display:flex; align-items:center;
+  text-decoration:none;
+}
+.footer-logo svg {
+  height:36px;
+  width:36px;
 }
 .footer-links { display:flex; gap:24px; }
 .footer-links a {
@@ -475,7 +481,27 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">CNR Digital</a>
+  <a class="nav-logo" href="#">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="nav-pg" cx="38%" cy="32%" r="72%">
+          <stop offset="0%" stop-color="#1a3060"/>
+          <stop offset="100%" stop-color="#0a1628"/>
+        </radialGradient>
+        <linearGradient id="nav-gd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d8b86a"/>
+          <stop offset="55%" stop-color="#c9a84c"/>
+          <stop offset="100%" stop-color="#a8852e"/>
+        </linearGradient>
+        <clipPath id="nav-clip"><circle cx="200" cy="200" r="198"/></clipPath>
+      </defs>
+      <rect width="400" height="400" fill="url(#nav-pg)" clip-path="url(#nav-clip)"/>
+      <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" clip-path="url(#nav-clip)"/>
+      <text x="200" y="226" font-family="Georgia,serif" font-size="154" font-weight="700" text-anchor="middle" fill="url(#nav-gd)" letter-spacing="4" clip-path="url(#nav-clip)">CNR</text>
+      <line x1="68" y1="258" x2="332" y2="258" stroke="#c9a84c" stroke-width="1.2" opacity="0.65"/>
+      <text x="200" y="300" font-family="Georgia,serif" font-size="30" font-weight="400" text-anchor="middle" fill="url(#nav-gd)" letter-spacing="10" clip-path="url(#nav-clip)">DIGITAL</text>
+    </svg>
+  </a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#how">How it works</a>
@@ -743,7 +769,27 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">CNR Digital</div>
+  <a class="footer-logo" href="#">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="ft-pg" cx="38%" cy="32%" r="72%">
+          <stop offset="0%" stop-color="#1a3060"/>
+          <stop offset="100%" stop-color="#0a1628"/>
+        </radialGradient>
+        <linearGradient id="ft-gd" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d8b86a"/>
+          <stop offset="55%" stop-color="#c9a84c"/>
+          <stop offset="100%" stop-color="#a8852e"/>
+        </linearGradient>
+        <clipPath id="ft-clip"><circle cx="200" cy="200" r="198"/></clipPath>
+      </defs>
+      <rect width="400" height="400" fill="url(#ft-pg)" clip-path="url(#ft-clip)"/>
+      <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" clip-path="url(#ft-clip)"/>
+      <text x="200" y="226" font-family="Georgia,serif" font-size="154" font-weight="700" text-anchor="middle" fill="url(#ft-gd)" letter-spacing="4" clip-path="url(#ft-clip)">CNR</text>
+      <line x1="68" y1="258" x2="332" y2="258" stroke="#c9a84c" stroke-width="1.2" opacity="0.65"/>
+      <text x="200" y="300" font-family="Georgia,serif" font-size="30" font-weight="400" text-anchor="middle" fill="url(#ft-gd)" letter-spacing="10" clip-path="url(#ft-clip)">DIGITAL</text>
+    </svg>
+  </a>
   <div class="footer-links">
     <a href="#services">Services</a>
     <a href="#how">How it works</a>
