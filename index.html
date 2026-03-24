@@ -785,6 +785,126 @@
     }
 
     /* ══════════════════════════════════════
+   SECTION 5b — BRANDENGINE PRINCIPLES
+══════════════════════════════════════ */
+    #principles {
+      background: var(--navy-mid);
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .principles-intro {
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+    .principles-sub {
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    /* Golden rule banner */
+    .golden-rule-banner {
+      background: rgba(201,168,76,0.05);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 20px 28px;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .golden-rule-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .golden-rule-quote {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--white);
+      line-height: 1.7;
+    }
+    .golden-rule-quote strong {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    /* Principle groups */
+    .principle-group {
+      margin-bottom: 40px;
+    }
+    .principle-group:last-child {
+      margin-bottom: 0;
+    }
+    .principle-group-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1px;
+    }
+    .principle-group-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .principle-cards {
+      display: grid;
+      gap: 1px;
+      background: var(--gap-line);
+    }
+    .principle-cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .principle-cards.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .principle-cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .principle-card {
+      background: var(--navy);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s ease;
+    }
+    .principle-card:hover { background: var(--navy-mid); }
+    .principle-card.accent { border-top: 2px solid var(--gold); }
+    .principle-card-watermark {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-family: 'EB Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.15;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .principle-card-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9375rem; /* 15px */
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .principle-card.accent .principle-card-title { color: var(--gold); }
+    .principle-card-desc {
+      font-size: 0.6875rem; /* 11px */
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* ══════════════════════════════════════
    SECTION 6 — HOW IT WORKS
 ══════════════════════════════════════ */
     #how {
@@ -1421,6 +1541,14 @@
 
     @media (max-width:768px) {
 
+      /* Principles section */
+      #principles { padding: 72px 0; }
+      .principle-cards.cols-3,
+      .principle-cards.cols-4,
+      .principle-cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .principle-card { padding: 14px; }
+      .golden-rule-quote { font-size: 0.875rem; }
+
       /* Minimum 14px body text on mobile */
       .who-desc,
       .step-desc,
@@ -1551,6 +1679,11 @@
         padding: 20px 24px 28px;
       }
 
+      /* Principles 1 col at 480px */
+      .principle-cards.cols-3,
+      .principle-cards.cols-4,
+      .principle-cards.cols-2 { grid-template-columns: 1fr; }
+
       .hero-inner {
         padding: 0 20px;
       }
@@ -1605,6 +1738,7 @@
         <li><a href="#who">Services</a></li>
         <li><a href="#who">Who We Help</a></li>
         <li><a href="#brandengine">BrandEngine</a></li>
+        <li><a href="#principles">Principles</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#cta">Contact</a></li>
       </ul>
@@ -1621,6 +1755,7 @@
     <a href="#who" class="mobile-link">Services</a>
     <a href="#who" class="mobile-link">Who We Help</a>
     <a href="#brandengine" class="mobile-link">BrandEngine</a>
+    <a href="#principles" class="mobile-link">Principles</a>
     <a href="#pricing" class="mobile-link">Pricing</a>
     <a href="#cta" class="mobile-link">Contact</a>
     <a href="https://wa.me/447466378364" target="_blank" rel="noopener noreferrer"
@@ -1831,6 +1966,149 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+     SECTION 5b — BRANDENGINE PRINCIPLES
+════════════════════════════════════ -->
+  <section id="principles" aria-label="BrandEngine Principles">
+    <div class="section-wrap">
+
+      <!-- Header -->
+      <div class="principles-intro reveal">
+        <div class="eyebrow">What it's built on</div>
+        <h2 class="section-headline">The principles behind<br><em>BrandEngine</em></h2>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <p class="principles-sub">Every post BrandEngine writes is shaped by these principles — grounded in UK advertising law, real audience intelligence, and one simple goal: grow your business.</p>
+      </div>
+
+      <!-- Golden rule banner -->
+      <div class="golden-rule-banner reveal">
+        <div class="golden-rule-label">The golden rule</div>
+        <p class="golden-rule-quote">
+          Every post must be <strong>truthful</strong>, make the client look good,
+          give customers a reason to <strong>engage or buy</strong>,
+          and leave both sides happy.
+        </p>
+      </div>
+
+      <!-- Group 1 — Truth & compliance (3 cols) -->
+      <div class="principle-group reveal">
+        <div class="principle-group-label">Principle 1 — Truth &amp; compliance</div>
+        <div class="principle-cards cols-3" role="list">
+          <div class="principle-card accent reveal" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">01</div>
+            <div class="principle-card-title">Always tell the truth</div>
+            <div class="principle-card-desc">Only say what can be stood behind. Never invent claims, stats or details not in the brief.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-1" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">02</div>
+            <div class="principle-card-title">UK ASA CAP Code</div>
+            <div class="principle-card-desc">Every post checked against UK advertising law — substantiation, testimonials, pricing, food claims.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-2" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">03</div>
+            <div class="principle-card-title">Never hurt the client</div>
+            <div class="principle-card-desc">No promises the client can't keep. No legal risk. No embarrassing mistakes. When in doubt — leave it out.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 2 — Audience & intelligence (4 cols) -->
+      <div class="principle-group reveal">
+        <div class="principle-group-label">Principle 2 — Audience &amp; intelligence</div>
+        <div class="principle-cards cols-4" role="list">
+          <div class="principle-card accent reveal" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">04</div>
+            <div class="principle-card-title">Audience intelligence</div>
+            <div class="principle-card-desc">Knows who your customers are, when they're online, and what triggers them to buy.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-1" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">05</div>
+            <div class="principle-card-title">Timing intelligence</div>
+            <div class="principle-card-desc">Posts at the optimal time — lunch peaks, evening cravings, payday weekends.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-2" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">06</div>
+            <div class="principle-card-title">Local context</div>
+            <div class="principle-card-desc">Weather, festivals, sports nights, school holidays — content that feels timely and local.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-3" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">07</div>
+            <div class="principle-card-title">Campaign calendar</div>
+            <div class="principle-card-desc">Eid, Christmas, Diwali, Premier League — campaign briefs suggested automatically ahead of time.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 3 — Content & engagement (4 cols) -->
+      <div class="principle-group reveal">
+        <div class="principle-group-label">Principle 3 — Content &amp; engagement</div>
+        <div class="principle-cards cols-4" role="list">
+          <div class="principle-card accent reveal" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">08</div>
+            <div class="principle-card-title">Brand awareness</div>
+            <div class="principle-card-desc">Consistent voice, colours and tagline so customers recognise you instantly.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-1" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">09</div>
+            <div class="principle-card-title">Drive engagement</div>
+            <div class="principle-card-desc">Questions, polls, UGC — every post invites a response, comment or share.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-2" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">10</div>
+            <div class="principle-card-title">Be informative</div>
+            <div class="principle-card-desc">Hours, menu, offers, new items. Customers who know more, buy more.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-3" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">11</div>
+            <div class="principle-card-title">Build trust</div>
+            <div class="principle-card-desc">Hygiene ratings, reviews, years in business — credibility that converts browsers to buyers.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 4 — Conversion & growth (3 cols) -->
+      <div class="principle-group reveal">
+        <div class="principle-group-label">Principle 4 — Conversion &amp; growth</div>
+        <div class="principle-cards cols-3" role="list">
+          <div class="principle-card accent reveal" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">12</div>
+            <div class="principle-card-title">Right CTA every time</div>
+            <div class="principle-card-desc">Order Now, WhatsApp, Google Review — BrandEngine picks the right call to action per post type.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-1" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">13</div>
+            <div class="principle-card-title">Mutually beneficial</div>
+            <div class="principle-card-desc">Every post creates value for both client and customer. Never a one-sided hard sell.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-2" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">14</div>
+            <div class="principle-card-title">Performance learning</div>
+            <div class="principle-card-desc">Tracks what drives orders. Does more of what wins. Gets smarter every week.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Group 5 — Quality & brand consistency (2 cols) -->
+      <div class="principle-group reveal">
+        <div class="principle-group-label">Principle 5 — Quality &amp; brand consistency</div>
+        <div class="principle-cards cols-2" role="list">
+          <div class="principle-card accent reveal" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">15</div>
+            <div class="principle-card-title">Quality gate on every post</div>
+            <div class="principle-card-desc">Five checks before anything goes live — tone, truth, accuracy, CTA, brand fit. Nothing publishes without your approval.</div>
+          </div>
+          <div class="principle-card reveal reveal-delay-1" role="listitem">
+            <div class="principle-card-watermark" aria-hidden="true">16</div>
+            <div class="principle-card-title">Polite, courteous, human</div>
+            <div class="principle-card-desc">Warmth in every word. Thank customers. Acknowledge occasions. Be the business the community is proud of.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
