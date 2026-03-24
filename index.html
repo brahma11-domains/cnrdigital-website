@@ -3,953 +3,1770 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CNR Digital — Social Media Management for Growing Businesses</title>
-<meta name="description" content="CNR Digital handles your social media end-to-end — content, ads, and strategy — so you can focus on running your business.">
-<!-- Open Graph / Social Share -->
+<title>CNR Digital — AI-Powered Social Media Agency · UK &amp; India</title>
+<meta name="description" content="CNR Digital manages your Facebook, Instagram and Google presence automatically using BrandEngine — our own AI system. Agency quality at a fraction of the cost.">
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cnrdigital.co.uk/">
-<meta property="og:title" content="CNR Digital — Social Media Management for Growing Businesses">
-<meta property="og:description" content="CNR Digital handles your social media end-to-end — content, ads, and strategy — so you can focus on running your business.">
+<meta property="og:title" content="CNR Digital — AI-Powered Social Media Agency">
+<meta property="og:description" content="Grow your brand without the agency price tag. BrandEngine automates your social media from £49/month.">
 <meta property="og:image" content="https://cnrdigital.co.uk/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CNR Digital — Social Media Management for Growing Businesses">
-<meta name="twitter:description" content="CNR Digital handles your social media end-to-end — content, ads, and strategy — so you can focus on running your business.">
+<meta name="twitter:title" content="CNR Digital — AI-Powered Social Media Agency">
+<meta name="twitter:description" content="Grow your brand without the agency price tag. BrandEngine automates your social media from £49/month.">
 <meta name="twitter:image" content="https://cnrdigital.co.uk/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
+/* ── DESIGN TOKENS ── */
 :root {
-  --navy: #0a1628;
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --cream: #f5f3ee;
-  --white: #ffffff;
-  --grey: #666;
-  --border: rgba(201,168,76,0.2);
+  --navy:       #0a1628;
+  --navy-mid:   #122040;
+  --navy-light: #1a3060;
+  --gold:       #c9a84c;
+  --gold-light: #d8b86a;
+  --gold-dark:  #a8852e;
+  --white:      #ffffff;
+  --muted:      #8a9ab5;
+  --border:     rgba(201,168,76,0.12);
+  --border-card:rgba(201,168,76,0.15);
+  --gap-line:   rgba(201,168,76,0.15);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-
-html { scroll-behavior:smooth; }
-
+/* ── RESET ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
 body {
-  font-family:'Montserrat',sans-serif;
-  background:var(--cream);
-  color:var(--navy);
+  font-family:'Montserrat', sans-serif;
+  background:var(--navy);
+  color:var(--white);
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+ul { list-style:none; }
 
-/* ── NAVBAR ── */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  background:rgba(10,22,40,0.95);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  padding:0 40px;
-  height:64px;
-  display:flex; align-items:center; justify-content:space-between;
+/* ── TYPOGRAPHY UTILITIES ── */
+.eyebrow {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-family:'Montserrat', sans-serif;
+  font-size:0.65rem;
+  font-weight:600;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
 }
-.nav-logo {
-  display:flex; align-items:center;
-  text-decoration:none;
-  height:44px;
-}
-.nav-logo svg {
-  height:44px;
-  width:44px;
+.eyebrow::before {
+  content:'';
+  display:block;
+  width:28px;
+  height:1px;
+  background:var(--gold);
   flex-shrink:0;
 }
-.nav-links { display:flex; gap:32px; align-items:center; }
+.section-headline {
+  font-family:'EB Garamond', serif;
+  font-weight:700;
+  font-size:clamp(2rem, 4vw, 3rem);
+  line-height:1.15;
+  color:var(--white);
+}
+.section-headline em {
+  font-style:italic;
+  color:var(--gold-light);
+}
+.gold-rule {
+  width:48px;
+  height:1px;
+  background:linear-gradient(to right, var(--gold), transparent);
+  margin:20px 0 24px;
+}
+.body-text {
+  font-family:'Montserrat', sans-serif;
+  font-weight:300;
+  font-size:0.9rem;
+  line-height:1.8;
+  color:var(--muted);
+}
+.section-wrap {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Montserrat', sans-serif;
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:14px 28px;
+  border-radius:0;
+  cursor:pointer;
+  transition:background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn-outline {
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+}
+.btn-outline:hover {
+  background:var(--gold);
+  color:var(--navy);
+}
+.btn-solid {
+  background:var(--gold);
+  border:1px solid var(--gold);
+  color:var(--navy);
+  font-weight:700;
+}
+.btn-solid:hover {
+  background:var(--gold-light);
+  border-color:var(--gold-light);
+}
+
+/* ══════════════════════════════════════
+   SECTION 1 — NAVIGATION
+══════════════════════════════════════ */
+#nav {
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:rgba(10,22,40,0.96);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:background 0.3s ease;
+}
+.nav-inner {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.nav-logo {
+  font-family:'EB Garamond', serif;
+  font-size:1.35rem;
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:0.04em;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
 .nav-links a {
-  color:rgba(255,255,255,0.65);
-  font-size:11px; letter-spacing:2px;
-  text-transform:uppercase; text-decoration:none;
-  transition:color 0.2s;
+  font-size:0.72rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  transition:color 0.2s ease;
 }
 .nav-links a:hover { color:var(--gold); }
 .nav-cta {
-  background:var(--gold) !important;
-  color:var(--navy) !important;
-  padding:8px 20px;
-  border-radius:2px;
-  font-weight:600 !important;
-  transition:background 0.2s !important;
+  flex-shrink:0;
 }
-.nav-cta:hover { background:var(--gold-light) !important; }
+.hamburger {
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  padding:4px;
+  background:none;
+  border:none;
+}
+.hamburger span {
+  display:block;
+  width:22px;
+  height:1.5px;
+  background:var(--gold);
+  transition:transform 0.25s ease, opacity 0.25s ease;
+}
+.mobile-menu {
+  display:none;
+  position:fixed;
+  top:64px; left:0; right:0;
+  background:var(--navy-mid);
+  border-bottom:1px solid var(--border);
+  padding:24px 40px 32px;
+  z-index:999;
+  flex-direction:column;
+  gap:20px;
+}
+.mobile-menu a {
+  font-size:0.78rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom:none; }
+.mobile-menu.open { display:flex; }
 
-/* ── HERO ── */
-.hero {
+/* ══════════════════════════════════════
+   SECTION 2 — HERO
+══════════════════════════════════════ */
+#hero {
   min-height:100vh;
   background:var(--navy);
-  display:flex; align-items:center;
+  display:flex;
+  align-items:center;
   position:relative;
   overflow:hidden;
-  padding:100px 40px 80px;
+  padding:100px 0 60px;
 }
-.hero-grid {
-  position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-  background-size:60px 60px;
-}
-.hero-glow {
+.hero-circles {
   position:absolute;
-  width:600px; height:600px;
-  background:radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-  top:-100px; right:-100px;
+  inset:0;
   pointer-events:none;
+  overflow:hidden;
 }
-.hero-content {
-  max-width:780px;
-  position:relative; z-index:2;
+.hero-circles span {
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,0.07);
 }
+.hero-circles span:nth-child(1) { width:600px; height:600px; top:-150px; right:-100px; }
+.hero-circles span:nth-child(2) { width:400px; height:400px; top:50px; right:80px; }
+.hero-circles span:nth-child(3) { width:250px; height:250px; top:150px; right:220px; }
+.hero-circles span:nth-child(4) { width:800px; height:800px; bottom:-300px; left:-200px; border-color:rgba(201,168,76,0.04); }
+.hero-inner {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+  width:100%;
+}
+.hero-left { }
 .hero-eyebrow {
-  font-size:10px; letter-spacing:4px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:0.65rem;
+  font-weight:600;
+  letter-spacing:0.25em;
   text-transform:uppercase;
   color:var(--gold);
   margin-bottom:24px;
-  display:flex; align-items:center; gap:12px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.7s ease forwards 0.1s;
 }
 .hero-eyebrow::before {
   content:'';
-  width:40px; height:1px;
+  display:block;
+  width:28px;
+  height:1px;
   background:var(--gold);
+  flex-shrink:0;
 }
-.hero h1 {
-  font-family:'EB Garamond',serif;
-  font-size:clamp(44px,6vw,80px);
-  font-weight:400;
-  color:var(--white);
+.hero-headline {
+  font-family:'EB Garamond', serif;
+  font-size:clamp(2.6rem, 5vw, 4rem);
+  font-weight:700;
   line-height:1.1;
-  margin-bottom:28px;
+  color:var(--white);
+  margin-bottom:22px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.7s ease forwards 0.2s;
 }
-.hero h1 em {
+.hero-headline em {
   font-style:italic;
-  color:var(--gold);
+  color:var(--gold-light);
+}
+.hero-rule {
+  width:48px;
+  height:1px;
+  background:linear-gradient(to right, var(--gold), transparent);
+  margin-bottom:22px;
+  opacity:0;
+  animation:fadeIn 0.7s ease forwards 0.35s;
 }
 .hero-sub {
-  font-size:16px;
-  color:rgba(255,255,255,0.6);
-  line-height:1.8;
-  max-width:560px;
-  margin-bottom:48px;
   font-weight:300;
+  font-size:0.9rem;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:32px;
+  max-width:480px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.7s ease forwards 0.4s;
 }
-.hero-actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
-.btn-primary {
-  background:var(--gold);
-  color:var(--navy);
-  padding:16px 36px;
-  font-family:'Montserrat',sans-serif;
-  font-size:12px; font-weight:700;
-  letter-spacing:2px; text-transform:uppercase;
-  text-decoration:none;
-  border:none; cursor:pointer;
-  border-radius:2px;
-  transition:all 0.2s;
-  display:inline-block;
+.hero-cta {
+  margin-bottom:28px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.7s ease forwards 0.5s;
 }
-.btn-primary:hover { background:var(--gold-light); transform:translateY(-1px); }
-.btn-secondary {
-  color:rgba(255,255,255,0.6);
-  font-size:12px; letter-spacing:1px;
-  text-decoration:none;
-  display:flex; align-items:center; gap:8px;
-  transition:color 0.2s;
+.hero-trust {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.7s ease forwards 0.6s;
 }
-.btn-secondary:hover { color:var(--white); }
-.hero-stats {
-  position:absolute; bottom:60px; right:40px;
-  display:flex; gap:48px; z-index:2;
+.trust-line {
+  font-size:0.72rem;
+  font-weight:400;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
-.stat { text-align:right; }
+.trust-line::before {
+  content:'✔';
+  color:var(--gold);
+  font-size:0.7rem;
+}
+.hero-right {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--gap-line);
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeUp 0.8s ease forwards 0.4s;
+}
+.stat-card {
+  background:var(--navy-mid);
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.stat-card.wide { grid-column:1 / -1; }
+.stat-card.accent { border-top:2px solid var(--gold); }
 .stat-num {
-  font-family:'EB Garamond',serif;
-  font-size:36px; color:var(--gold);
+  font-family:'EB Garamond', serif;
+  font-size:2.6rem;
+  font-weight:700;
+  color:var(--gold);
   line-height:1;
 }
 .stat-label {
-  font-size:10px; letter-spacing:2px;
-  color:rgba(255,255,255,0.4);
-  text-transform:uppercase; margin-top:4px;
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--white);
 }
+.stat-sub {
+  font-size:0.68rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.5;
+  margin-top:4px;
+}
+.stat-card-split {
+  grid-column:1 / -1;
+  background:var(--gap-line);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+}
+.stat-half {
+  background:var(--navy-mid);
+  padding:28px 24px;
+}
+.stat-half .stat-num { font-size:2rem; }
 
-/* ── MARQUEE ── */
-.marquee-wrap {
-  background:var(--gold);
-  padding:14px 0;
-  overflow:hidden;
+/* ══════════════════════════════════════
+   SECTION 3 — TRUST BAR
+══════════════════════════════════════ */
+#trust-bar {
+  background:var(--navy-mid);
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+  padding:18px 40px;
 }
-.marquee-track {
-  display:flex; gap:0;
-  animation:marquee 25s linear infinite;
+.trust-bar-inner {
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.trust-signal {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  color:var(--white);
   white-space:nowrap;
 }
-.marquee-item {
-  font-size:11px; font-weight:700;
-  letter-spacing:3px; text-transform:uppercase;
-  color:var(--navy);
-  padding:0 40px;
-}
-.marquee-dot { color:rgba(10,22,40,0.4); }
-@keyframes marquee {
-  from { transform:translateX(0); }
-  to { transform:translateX(-50%); }
+.trust-signal .icon {
+  font-size:0.85rem;
+  color:var(--gold);
 }
 
-/* ── SECTIONS ── */
-.section { padding:100px 40px; }
-.section-inner { max-width:1100px; margin:0 auto; }
-
-.section-label {
-  font-size:10px; letter-spacing:4px;
-  text-transform:uppercase; color:var(--gold);
-  margin-bottom:16px;
-  display:flex; align-items:center; gap:12px;
+/* ══════════════════════════════════════
+   SECTION 4 — WHO WE HELP
+══════════════════════════════════════ */
+#who {
+  background:var(--navy);
+  padding:100px 0;
+  border-top:1px solid var(--border);
 }
-.section-label::before { content:''; width:30px; height:1px; background:var(--gold); }
-
-.section-title {
-  font-family:'EB Garamond',serif;
-  font-size:clamp(32px,4vw,52px);
-  font-weight:400; line-height:1.2;
-  margin-bottom:16px;
+.who-intro {
+  max-width:580px;
+  margin-bottom:60px;
 }
-.section-sub {
-  font-size:15px; color:var(--grey);
-  line-height:1.8; max-width:560px;
-  font-weight:300;
-}
-
-/* ── SERVICES ── */
-#services { background:var(--white); }
-.services-grid {
+.who-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  grid-template-columns:repeat(3, 1fr);
   gap:1px;
-  background:rgba(0,0,0,0.08);
-  margin-top:60px;
-  border:1px solid rgba(0,0,0,0.08);
+  background:var(--gap-line);
+  margin-bottom:40px;
 }
-.service-card {
-  background:var(--white);
-  padding:48px 36px;
+.who-card {
+  background:var(--navy);
+  padding:32px 28px;
+  transition:background 0.25s ease;
+  border-top:1px solid transparent;
+  transition:border-color 0.25s ease, background 0.25s ease;
+}
+.who-card:hover {
+  background:var(--navy-mid);
+  border-top-color:var(--gold);
+}
+.who-num {
+  font-family:'EB Garamond', serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:rgba(201,168,76,0.25);
+  line-height:1;
+  margin-bottom:12px;
+}
+.who-title {
+  font-family:'EB Garamond', serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.who-desc {
+  font-size:0.78rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.7;
+}
+.who-note {
+  font-size:0.78rem;
+  font-weight:300;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  padding-top:24px;
+  font-style:italic;
+}
+
+/* ══════════════════════════════════════
+   SECTION 5 — BRANDENGINE
+══════════════════════════════════════ */
+#brandengine {
+  background:var(--navy-light);
+  padding:100px 0;
+  border-top:1px solid var(--border);
   position:relative;
   overflow:hidden;
-  transition:background 0.3s;
 }
-.service-card::before {
+#brandengine::before {
   content:'';
-  position:absolute; top:0; left:0; right:0;
+  position:absolute;
+  width:500px; height:500px;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,0.06);
+  top:-150px; right:-100px;
+  pointer-events:none;
+}
+#brandengine::after {
+  content:'';
+  position:absolute;
+  width:300px; height:300px;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,0.06);
+  top:0; right:60px;
+  pointer-events:none;
+}
+.brandengine-inner {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:start;
+  position:relative;
+  z-index:1;
+}
+.be-left { }
+.be-intro {
+  font-size:0.9rem;
+  font-weight:300;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:36px;
+}
+.be-features {
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.be-feature {
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+.be-arrow {
+  color:var(--gold);
+  font-size:1rem;
+  font-weight:700;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.be-feature-body { }
+.be-feature-title {
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:6px;
+}
+.be-feature-desc {
+  font-size:0.8rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.7;
+}
+.be-right { }
+.be-card {
+  background:var(--navy-mid);
+  border:1px solid var(--border-card);
+  padding:40px 36px;
+  position:sticky;
+  top:88px;
+}
+.be-card-label {
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+.be-card-time {
+  font-family:'EB Garamond', serif;
+  font-size:5rem;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:32px;
+}
+.be-card-list {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-bottom:36px;
+}
+.be-card-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.78rem;
+  font-weight:400;
+  color:var(--white);
+}
+.be-card-item::before {
+  content:'';
+  display:block;
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--gold);
+  flex-shrink:0;
+}
+.be-cta-block {
+  margin-top:60px;
+  border-top:1px solid var(--border);
+  padding-top:40px;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.be-cta-text {
+  font-size:0.85rem;
+  font-weight:400;
+  color:var(--white);
+  flex:1;
+  min-width:200px;
+}
+
+/* ══════════════════════════════════════
+   SECTION 6 — HOW IT WORKS
+══════════════════════════════════════ */
+#how {
+  background:var(--navy);
+  padding:100px 0;
+  border-top:1px solid var(--border);
+}
+.how-intro {
+  max-width:480px;
+  margin-bottom:60px;
+}
+.steps-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:1px;
+  background:var(--gap-line);
+}
+.step-card {
+  background:var(--navy);
+  padding:36px 28px;
+  position:relative;
+  overflow:hidden;
+  cursor:default;
+}
+.step-card::before {
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
   height:2px;
   background:var(--gold);
   transform:scaleX(0);
   transform-origin:left;
-  transition:transform 0.3s;
+  transition:transform 0.35s ease;
 }
-.service-card:hover { background:#fafaf8; }
-.service-card:hover::before { transform:scaleX(1); }
-.service-icon {
-  font-size:28px; margin-bottom:20px;
-}
-.service-card h3 {
-  font-family:'EB Garamond',serif;
-  font-size:22px; margin-bottom:12px;
-}
-.service-card p {
-  font-size:13px; color:var(--grey);
-  line-height:1.8; margin-bottom:20px;
-}
-.service-list {
-  list-style:none;
-  font-size:12px; color:var(--grey);
-  line-height:2;
-}
-.service-list li::before {
-  content:'— ';
-  color:var(--gold);
-}
-
-/* ── HOW IT WORKS ── */
-#how { background:var(--navy); }
-#how .section-title { color:var(--white); }
-#how .section-sub { color:rgba(255,255,255,0.5); }
-#how .section-label { color:var(--gold); }
-.steps {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:2px;
-  margin-top:60px;
-  background:rgba(201,168,76,0.1);
-}
-.step {
-  background:var(--navy);
-  padding:48px 36px;
-  position:relative;
+.step-card:hover::before { transform:scaleX(1); }
+.step-card:hover { background:var(--navy-mid); }
+.step-bg-num {
+  position:absolute;
+  top:16px; right:20px;
+  font-family:'EB Garamond', serif;
+  font-size:4.5rem;
+  font-weight:700;
+  color:rgba(201,168,76,0.07);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
 }
 .step-num {
-  font-family:'EB Garamond',serif;
-  font-size:72px; color:rgba(201,168,76,0.1);
-  line-height:1;
-  margin-bottom:20px;
+  font-family:'EB Garamond', serif;
+  font-size:1rem;
   font-weight:700;
+  color:var(--gold);
+  margin-bottom:16px;
 }
-.step h3 {
-  font-family:'EB Garamond',serif;
-  font-size:24px; color:var(--white);
+.step-title {
+  font-family:'EB Garamond', serif;
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:12px;
+  line-height:1.3;
+}
+.step-desc {
+  font-size:0.78rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* ══════════════════════════════════════
+   SECTION 7 — PRICING
+══════════════════════════════════════ */
+#pricing {
+  background:var(--navy-mid);
+  padding:100px 0;
+  border-top:1px solid var(--border);
+}
+.pricing-intro {
+  max-width:560px;
+  margin-bottom:60px;
+}
+.pricing-sub {
+  font-size:0.8rem;
+  font-weight:300;
+  color:var(--muted);
+  margin-top:-8px;
+  margin-bottom:0;
+}
+.pricing-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--gap-line);
+  margin-bottom:40px;
+}
+.price-card {
+  background:var(--navy-mid);
+  padding:40px 32px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.price-card.featured {
+  background:var(--navy-light);
+  border:1px solid var(--gold);
+}
+.price-badge {
+  display:inline-block;
+  font-size:0.6rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--navy);
+  background:var(--gold);
+  padding:4px 10px;
+  margin-bottom:20px;
+  align-self:flex-start;
+}
+.price-name {
+  font-family:'Montserrat', sans-serif;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+.price-amount {
+  font-family:'EB Garamond', serif;
+  font-size:3.2rem;
+  font-weight:700;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:6px;
+}
+.price-period {
+  font-size:0.72rem;
+  font-weight:400;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+.price-divider {
+  width:100%;
+  height:1px;
+  background:var(--border);
+  margin-bottom:24px;
+}
+.price-features {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  flex:1;
+  margin-bottom:32px;
+}
+.price-feature {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:0.78rem;
+  font-weight:400;
+  color:var(--white);
+  line-height:1.4;
+}
+.price-feature::before {
+  content:'→';
+  color:var(--gold);
+  font-size:0.72rem;
+  flex-shrink:0;
+  margin-top:1px;
+}
+.pricing-compare {
+  font-size:0.78rem;
+  font-weight:300;
+  color:var(--muted);
+  text-align:center;
+  margin-bottom:32px;
+  font-style:italic;
+}
+.pricing-cta {
+  text-align:center;
+}
+
+/* ══════════════════════════════════════
+   SECTION 8 — LIVE CLIENTS
+══════════════════════════════════════ */
+#clients {
+  background:var(--navy);
+  padding:100px 0;
+  border-top:1px solid var(--border);
+}
+.clients-intro {
+  max-width:500px;
+  margin-bottom:60px;
+}
+.clients-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--gap-line);
+  margin-bottom:48px;
+}
+.client-card {
+  background:var(--navy);
+  padding:36px 30px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  transition:background 0.25s ease;
+}
+.client-card:hover { background:var(--navy-mid); }
+.client-live-row {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+}
+.live-dot {
+  width:8px; height:8px;
+  border-radius:50%;
+  background:#22c55e;
+  flex-shrink:0;
+  animation:pulse-live 2s ease-in-out infinite;
+}
+.live-label {
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:#22c55e;
+}
+.client-name {
+  font-family:'EB Garamond', serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.client-type {
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+.client-quote {
+  font-size:0.8rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:24px;
+  flex:1;
+}
+.client-stats {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.stat-chip {
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--gold);
+  border:1px solid rgba(201,168,76,0.25);
+  padding:4px 10px;
+}
+.clients-pullquote {
+  border-left:2px solid var(--gold);
+  padding:20px 28px;
+  margin-top:8px;
+}
+.pq-text {
+  font-family:'EB Garamond', serif;
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--white);
+  line-height:1.6;
   margin-bottom:12px;
 }
-.step p { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.8; }
-.step-accent {
-  position:absolute; top:0; right:0;
-  width:40px; height:40px;
-  border-top:2px solid var(--gold);
-  border-right:2px solid var(--gold);
+.pq-attr {
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
 }
 
-/* ── WHO IT'S FOR ── */
-#who { background:var(--cream); }
-.who-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:16px;
-  margin-top:60px;
-}
-.who-card {
-  background:var(--white);
-  border:1px solid rgba(0,0,0,0.06);
-  padding:32px 24px;
+/* ══════════════════════════════════════
+   SECTION 9 — FINAL CTA
+══════════════════════════════════════ */
+#cta {
+  background:var(--navy-light);
+  padding:120px 0;
+  border-top:1px solid var(--border);
   text-align:center;
-  border-radius:2px;
-  transition:all 0.2s;
-}
-.who-card:hover {
-  border-color:var(--gold);
-  transform:translateY(-3px);
-  box-shadow:0 12px 40px rgba(0,0,0,0.08);
-}
-.who-icon { font-size:32px; margin-bottom:12px; }
-.who-card h4 {
-  font-size:13px; font-weight:600;
-  letter-spacing:0.5px;
-}
-
-/* ── WHY US ── */
-#why { background:var(--white); }
-.why-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-top:60px;
-  align-items:center;
-}
-.why-points { display:flex; flex-direction:column; gap:28px; }
-.why-point { display:flex; gap:20px; align-items:flex-start; }
-.why-num {
-  font-family:'EB Garamond',serif;
-  font-size:32px; color:var(--gold);
-  line-height:1; flex-shrink:0;
-  width:40px;
-}
-.why-point h4 { font-size:15px; font-weight:600; margin-bottom:6px; }
-.why-point p { font-size:13px; color:var(--grey); line-height:1.7; }
-.why-visual {
-  background:var(--navy);
-  padding:48px;
-  border-radius:2px;
   position:relative;
   overflow:hidden;
 }
-.why-visual::after {
+#cta::before {
   content:'';
-  position:absolute; inset:0;
-  background:linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 60%);
+  position:absolute;
+  width:600px; height:600px;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,0.06);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
 }
-.why-quote {
-  font-family:'EB Garamond',serif;
-  font-size:28px; font-style:italic;
+#cta::after {
+  content:'';
+  position:absolute;
+  width:350px; height:350px;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,0.08);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+.cta-inner {
+  position:relative;
+  z-index:1;
+  max-width:600px;
+  margin:0 auto;
+  padding:0 40px;
+}
+.cta-headline {
+  font-family:'EB Garamond', serif;
+  font-size:clamp(2.2rem, 4vw, 3.2rem);
+  font-weight:700;
   color:var(--white);
-  line-height:1.4;
-  position:relative; z-index:1;
-}
-.why-quote-attr {
-  font-size:11px; letter-spacing:2px;
-  color:var(--gold); margin-top:20px;
-  text-transform:uppercase;
-  position:relative; z-index:1;
-}
-
-/* ── CONTACT ── */
-#contact { background:var(--navy); }
-#contact .section-title { color:var(--white); }
-#contact .section-sub { color:rgba(255,255,255,0.5); }
-.contact-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-top:60px;
-  align-items:start;
-}
-.form-group { margin-bottom:20px; }
-.form-group label {
-  display:block;
-  font-size:10px; letter-spacing:2px;
-  text-transform:uppercase; color:rgba(255,255,255,0.4);
-  margin-bottom:8px;
-}
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width:100%;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  color:var(--white);
-  padding:14px 16px;
-  font-family:'Montserrat',sans-serif;
-  font-size:14px;
-  border-radius:2px;
-  outline:none;
-  transition:border-color 0.2s;
-}
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus { border-color:var(--gold); }
-.form-group textarea { height:120px; resize:vertical; }
-.form-group select option { background:var(--navy); }
-.contact-info { padding-top:12px; }
-.contact-info h3 {
-  font-family:'EB Garamond',serif;
-  font-size:28px; color:var(--white);
-  margin-bottom:20px;
-}
-.contact-detail {
-  display:flex; gap:16px; align-items:flex-start;
+  line-height:1.15;
   margin-bottom:24px;
 }
-.contact-detail-icon {
-  width:40px; height:40px;
-  background:rgba(201,168,76,0.1);
-  border:1px solid rgba(201,168,76,0.2);
-  border-radius:2px;
-  display:flex; align-items:center; justify-content:center;
-  font-size:16px; flex-shrink:0;
+.cta-sub {
+  font-size:0.88rem;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:40px;
 }
-.contact-detail-text { font-size:13px; color:rgba(255,255,255,0.6); line-height:1.6; }
-.contact-detail-text strong { color:var(--white); display:block; margin-bottom:2px; }
-.contact-detail-text a { color:var(--gold); text-decoration:none; }
-
-/* ── PRICING ── */
-#pricing { background:#0d1d35; }
-#pricing .section-title { color:var(--white); }
-#pricing .section-sub { color:rgba(255,255,255,0.5); }
-#pricing .section-label { color:var(--gold); }
-.pricing-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:60px;
+.cta-btn-wrap {
+  margin-bottom:28px;
 }
-.pricing-card {
-  background:var(--navy);
-  border:1px solid rgba(201,168,76,0.15);
-  border-radius:2px;
-  padding:40px 32px;
-  position:relative;
-  display:flex; flex-direction:column;
-}
-.pricing-card.featured { border-color:var(--gold); }
-.pricing-badge {
-  position:absolute; top:-1px; left:50%; transform:translateX(-50%);
-  background:var(--gold); color:var(--navy);
-  font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-  padding:5px 16px; white-space:nowrap;
-}
-.pricing-tier {
-  font-size:10px; letter-spacing:3px; text-transform:uppercase;
-  color:var(--gold); margin-bottom:16px;
-}
-.pricing-price {
-  font-family:'EB Garamond',serif;
-  font-size:48px; color:var(--white); line-height:1; margin-bottom:4px;
-}
-.pricing-price span {
-  font-family:'Montserrat',sans-serif;
-  font-size:14px; color:rgba(255,255,255,0.4); font-weight:300;
-}
-.pricing-desc {
-  font-size:13px; color:rgba(255,255,255,0.4);
-  margin-bottom:28px; line-height:1.6;
-}
-.pricing-features {
-  list-style:none; flex:1; margin-bottom:32px;
-}
-.pricing-features li {
-  font-size:13px; color:rgba(255,255,255,0.65);
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  display:flex; gap:10px; align-items:flex-start; line-height:1.5;
-}
-.pricing-features li::before { content:'—'; color:var(--gold); flex-shrink:0; }
-.pricing-btn {
-  display:block; text-align:center;
-  background:transparent; color:var(--gold);
-  border:1px solid var(--gold);
-  padding:13px 24px;
-  font-family:'Montserrat',sans-serif;
-  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-  text-decoration:none; border-radius:2px; transition:all 0.2s;
-}
-.pricing-btn:hover { background:var(--gold); color:var(--navy); }
-.pricing-card.featured .pricing-btn { background:var(--gold); color:var(--navy); }
-.pricing-card.featured .pricing-btn:hover { background:var(--gold-light); }
-
-/* ── FOOTER ── */
-footer {
-  background:#060e1a;
-  padding:40px;
+.cta-reassurance {
   display:flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content:center;
+  gap:28px;
   flex-wrap:wrap;
-  gap:20px;
-  border-top:1px solid var(--border);
+  margin-bottom:20px;
+}
+.cta-reassure-item {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:0.7rem;
+  font-weight:400;
+  color:var(--muted);
+}
+.cta-reassure-item::before {
+  content:'✔';
+  color:var(--gold);
+  font-size:0.65rem;
+}
+.cta-email {
+  font-size:0.72rem;
+  font-weight:300;
+  color:var(--muted);
+}
+.cta-email a {
+  color:var(--gold);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* ══════════════════════════════════════
+   SECTION 10 — FOOTER
+══════════════════════════════════════ */
+#footer {
+  background:var(--navy);
+  border-top:2px solid var(--gold);
+  padding:60px 0 0;
+}
+.footer-inner {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 40px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1.2fr;
+  gap:48px;
+  margin-bottom:48px;
 }
 .footer-logo {
-  display:flex; align-items:center;
-  text-decoration:none;
+  font-family:'EB Garamond', serif;
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--gold);
+  margin-bottom:10px;
 }
-.footer-logo svg {
-  height:36px;
-  width:36px;
+.footer-tagline {
+  font-size:0.72rem;
+  font-weight:400;
+  color:var(--muted);
+  line-height:1.6;
 }
-.footer-links { display:flex; gap:24px; }
+.footer-col-title {
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.footer-links {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
 .footer-links a {
-  color:rgba(255,255,255,0.3);
-  font-size:11px; letter-spacing:1px;
-  text-decoration:none; text-transform:uppercase;
-  transition:color 0.2s;
+  font-size:0.78rem;
+  font-weight:400;
+  color:var(--muted);
+  transition:color 0.2s ease;
 }
 .footer-links a:hover { color:var(--gold); }
+.footer-contact {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.footer-contact-item {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:0.78rem;
+  font-weight:400;
+  color:var(--muted);
+}
+.footer-contact-item a {
+  color:var(--muted);
+  transition:color 0.2s ease;
+}
+.footer-contact-item a:hover { color:var(--gold); }
+.footer-contact-label {
+  font-weight:600;
+  color:var(--white);
+  flex-shrink:0;
+  min-width:80px;
+}
+.footer-bar {
+  border-top:1px solid var(--border);
+  padding:20px 40px;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
 .footer-copy {
-  color:rgba(255,255,255,0.2);
-  font-size:11px;
+  font-size:0.7rem;
+  font-weight:300;
+  color:var(--muted);
+}
+.footer-copy span { color:var(--gold); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes pulse-live {
+  0%, 100% { opacity:1; transform:scale(1); }
+  50%       { opacity:0.4; transform:scale(0.75); }
 }
 
-/* ── RESPONSIVE ── */
-@media(max-width:768px) {
-  nav { padding:0 20px; }
-  .nav-links { display:none; }
-  .section { padding:70px 20px; }
-  .hero { padding:100px 20px 120px; }
-  .hero-stats { display:none; }
-  .steps { grid-template-columns:1fr; }
-  .why-grid { grid-template-columns:1fr; }
-  .contact-grid { grid-template-columns:1fr; }
+/* Scroll-triggered reveal */
+.reveal {
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-delay-1 { transition-delay:0.1s; }
+.reveal-delay-2 { transition-delay:0.2s; }
+.reveal-delay-3 { transition-delay:0.3s; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width:1024px) {
+  .hero-inner { gap:40px; }
+  .brandengine-inner { gap:48px; }
+  .steps-grid { grid-template-columns:repeat(2, 1fr); }
+}
+
+@media (max-width:768px) {
+  /* Minimum 14px body text on mobile */
+  .who-desc, .step-desc, .be-feature-desc, .be-feature-title,
+  .price-feature, .client-quote, .body-text, .be-intro,
+  .trust-line, .footer-links a, .footer-contact-item,
+  .stat-label, .stat-sub, .who-note, .cta-sub {
+    font-size:0.875rem; /* = 14px at 16px base */
+  }
+  /* Ensure all buttons are at least 44px tall (touch target) */
+  .btn { padding:14px 28px; min-height:44px; }
+
+  .nav-links, .nav-cta { display:none; }
+  .hamburger { display:flex; }
+
+  .hero-inner {
+    grid-template-columns:1fr;
+    gap:48px;
+    padding:0 24px;
+  }
+  .hero-right {
+    grid-template-columns:1fr 1fr;
+  }
+
+  #trust-bar { padding:16px 24px; }
+  .trust-bar-inner { gap:20px; }
+  .trust-signal { font-size:0.65rem; }
+
+  .section-wrap { padding:0 24px; }
+
+  #who { padding:72px 0; }
+  .who-grid { grid-template-columns:1fr 1fr; }
+
+  #brandengine { padding:72px 0; }
+  .brandengine-inner { grid-template-columns:1fr; gap:40px; }
+  .be-card { position:static; }
+
+  #how { padding:72px 0; }
+  .steps-grid { grid-template-columns:1fr 1fr; }
+
+  #pricing { padding:72px 0; }
   .pricing-grid { grid-template-columns:1fr; }
-  footer { flex-direction:column; text-align:center; }
-  .footer-links { flex-wrap:wrap; justify-content:center; }
+
+  #clients { padding:72px 0; }
+  .clients-grid { grid-template-columns:1fr; }
+
+  #cta { padding:80px 0; }
+
+  .footer-inner {
+    grid-template-columns:1fr;
+    gap:36px;
+    padding:0 24px;
+  }
+  .footer-bar { padding:20px 24px; }
+}
+
+@media (max-width:480px) {
+  .nav-inner { padding:0 20px; }
+  .mobile-menu { padding:20px 24px 28px; }
+
+  .hero-inner { padding:0 20px; }
+  .hero-headline { font-size:2.2rem; }
+  .hero-right { grid-template-columns:1fr; }
+
+  .who-grid { grid-template-columns:1fr; }
+  .steps-grid { grid-template-columns:1fr; }
+  .pricing-grid { grid-template-columns:1fr; }
+  .clients-grid { grid-template-columns:1fr; }
+
+  .trust-bar-inner { flex-direction:column; gap:12px; }
+
+  .cta-reassurance { flex-direction:column; align-items:center; gap:12px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="nav-pg" cx="38%" cy="32%" r="72%">
-          <stop offset="0%" stop-color="#1a3060"/>
-          <stop offset="100%" stop-color="#0a1628"/>
-        </radialGradient>
-        <linearGradient id="nav-gd" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d8b86a"/>
-          <stop offset="55%" stop-color="#c9a84c"/>
-          <stop offset="100%" stop-color="#a8852e"/>
-        </linearGradient>
-        <clipPath id="nav-clip"><circle cx="200" cy="200" r="198"/></clipPath>
-      </defs>
-      <rect width="400" height="400" fill="url(#nav-pg)" clip-path="url(#nav-clip)"/>
-      <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" clip-path="url(#nav-clip)"/>
-      <text x="200" y="226" font-family="Georgia,serif" font-size="154" font-weight="700" text-anchor="middle" fill="url(#nav-gd)" letter-spacing="4" clip-path="url(#nav-clip)">CNR</text>
-      <line x1="68" y1="258" x2="332" y2="258" stroke="#c9a84c" stroke-width="1.2" opacity="0.65"/>
-      <text x="200" y="300" font-family="Georgia,serif" font-size="30" font-weight="400" text-anchor="middle" fill="url(#nav-gd)" letter-spacing="10" clip-path="url(#nav-clip)">DIGITAL</text>
-    </svg>
-  </a>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#how">How it works</a>
-    <a href="#who">Who it's for</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact" class="nav-cta">Book Free Call</a>
+<!-- ════════════════════════════════════
+     SECTION 1 — NAVIGATION
+════════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">CNR Digital</a>
+    <ul class="nav-links" role="list">
+      <li><a href="#who">Services</a></li>
+      <li><a href="#who">Who We Help</a></li>
+      <li><a href="#brandengine">BrandEngine</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#cta">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-outline nav-cta" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Social Media Management</div>
-    <h1>We run your social media.<br><em>You run your business.</em></h1>
-    <p class="hero-sub">Most businesses lose customers because their social media is inactive or inconsistent. We handle everything — content, community, and ads — so you don't have to think about it.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Book a Free 30-Min Call</a>
-      <a href="#services" class="btn-secondary">See what we do →</a>
-    </div>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#who" class="mobile-link">Services</a>
+  <a href="#who" class="mobile-link">Who We Help</a>
+  <a href="#brandengine" class="mobile-link">BrandEngine</a>
+  <a href="#pricing" class="mobile-link">Pricing</a>
+  <a href="#cta" class="mobile-link">Contact</a>
+  <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:700;">Chat on WhatsApp →</a>
+</div>
+
+
+<!-- ════════════════════════════════════
+     SECTION 2 — HERO
+════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-circles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
   </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Done for you</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">AI-Powered Social Media Agency · UK &amp; India</div>
+      <h1 class="hero-headline">
+        Grow your brand.<br>
+        Without the agency<br>
+        <em>price tag.</em>
+      </h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-sub">
+        We manage your Facebook, Instagram and Google presence automatically using BrandEngine — our own AI system. You get agency quality at a fraction of the cost.
+      </p>
+      <div class="hero-cta">
+        <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get Free Consultation</a>
+      </div>
+      <div class="hero-trust" aria-label="Trust signals">
+        <div class="trust-line">Reply within 5 minutes</div>
+        <div class="trust-line">UK &amp; India clients supported</div>
+        <div class="trust-line">No obligation, no contract</div>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Hours of your time</div>
+
+    <div class="hero-right" aria-label="Key statistics">
+      <!-- Card 1: Starting price -->
+      <div class="stat-card wide">
+        <div class="stat-num">£49</div>
+        <div class="stat-label">Starting price per month</div>
+        <div class="stat-sub">vs £500–£2,000/month at a traditional agency</div>
+      </div>
+      <!-- Card 2: Split — 30s + 24/7 -->
+      <div class="stat-card-split">
+        <div class="stat-half">
+          <div class="stat-num">30s</div>
+          <div class="stat-label">To publish a post</div>
+        </div>
+        <div class="stat-half">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Automated posting</div>
+        </div>
+      </div>
+      <!-- Card 3: Platforms -->
+      <div class="stat-card">
+        <div class="stat-num" style="font-size:1.6rem;letter-spacing:-0.02em;">FB · IG · GBP</div>
+        <div class="stat-label">Platforms supported</div>
+      </div>
+      <!-- Card 4: AI-Powered -->
+      <div class="stat-card accent">
+        <div class="stat-num" style="font-size:1.4rem;">AI-Powered</div>
+        <div class="stat-label">Built by us, not bought in</div>
+        <div class="stat-sub">BrandEngine — our proprietary AI content system</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Social Media Management</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Content Creation</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Paid Advertising</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Brand Strategy</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Facebook & Instagram</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">LinkedIn Management</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Google Ads</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Community Management</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Social Media Management</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Content Creation</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Paid Advertising</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Brand Strategy</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Facebook & Instagram</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">LinkedIn Management</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Google Ads</span><span class="marquee-dot">·</span>
-    <span class="marquee-item">Community Management</span><span class="marquee-dot">·</span>
+
+<!-- ════════════════════════════════════
+     SECTION 3 — TRUST BAR
+════════════════════════════════════ -->
+<div id="trust-bar" role="complementary" aria-label="Trust signals">
+  <div class="trust-bar-inner">
+    <div class="trust-signal"><span class="icon">⭐</span> 3 Live Clients Posting Daily</div>
+    <div class="trust-signal"><span class="icon">⚡</span> Posts Generated in 30 Seconds</div>
+    <div class="trust-signal"><span class="icon">✔</span> UK ASA Compliant Content</div>
+    <div class="trust-signal"><span class="icon">🇬🇧</span> Based in Aylesbury, UK</div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services" class="section">
-  <div class="section-inner">
-    <div class="section-label">What we do</div>
-    <h2 class="section-title">Everything your business needs<br>to grow online</h2>
-    <p class="section-sub">We take social media completely off your plate. Here's exactly what you get when you work with us.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">📅</div>
-        <h3>Social Media Management</h3>
-        <p>We manage your social accounts end-to-end — posting regularly, engaging your audience, and keeping your brand visible every week.</p>
-        <ul class="service-list">
-          <li>Regular posts on Facebook, Instagram & LinkedIn</li>
-          <li>Community management & comment replies</li>
-          <li>Monthly performance report</li>
-        </ul>
+
+<!-- ════════════════════════════════════
+     SECTION 4 — WHO WE HELP
+════════════════════════════════════ -->
+<section id="who" aria-label="Who we help">
+  <div class="section-wrap">
+    <div class="who-intro reveal">
+      <div class="eyebrow">Who we help</div>
+      <h2 class="section-headline">Built for businesses that<br><em>need results, not reports.</em></h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="body-text">Whether you're a local UK business looking for consistent online presence, or an India-facing consultancy reaching clients across borders — CNR Digital handles the content, so you can focus on what you do best.</p>
+    </div>
+
+    <div class="who-grid" role="list">
+      <div class="who-card reveal" role="listitem">
+        <div class="who-num">01</div>
+        <div class="who-title">Restaurants &amp; Takeaways</div>
+        <div class="who-desc">Menu posts, offers, seasonal campaigns — automated daily.</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">✏️</div>
-        <h3>Content Creation</h3>
-        <p>Professional graphics, captions, and short videos that represent your brand properly — no more rushed or inconsistent posts.</p>
-        <ul class="service-list">
-          <li>Branded graphics & images</li>
-          <li>Captions & hashtag strategy</li>
-          <li>Short-form video & Reels</li>
-        </ul>
+      <div class="who-card reveal reveal-delay-1" role="listitem">
+        <div class="who-num">02</div>
+        <div class="who-title">Local UK Businesses</div>
+        <div class="who-desc">Barbers, beauty salons, gyms — consistent presence without the effort.</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🎯</div>
-        <h3>Paid Advertising</h3>
-        <p>Targeted ads on Facebook, Instagram and Google that put your business in front of people who are ready to buy.</p>
-        <ul class="service-list">
-          <li>Meta Ads (Facebook & Instagram)</li>
-          <li>Google Ads</li>
-          <li>Budget management & ROI tracking</li>
-        </ul>
+      <div class="who-card reveal reveal-delay-2" role="listitem">
+        <div class="who-num">03</div>
+        <div class="who-title">Study Abroad Consultants</div>
+        <div class="who-desc">Reach Indian students and families at the right moment.</div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🏷️</div>
-        <h3>Brand Strategy</h3>
-        <p>A clear, consistent brand identity builds trust. We help you define how your business looks and sounds across every platform.</p>
-        <ul class="service-list">
-          <li>Brand identity & visual guidelines</li>
-          <li>Tone of voice & messaging</li>
-          <li>Competitor analysis</li>
-        </ul>
+      <div class="who-card reveal" role="listitem">
+        <div class="who-num">04</div>
+        <div class="who-title">Professional Services</div>
+        <div class="who-desc">Accountants, solicitors, estate agents — build trust online.</div>
+      </div>
+      <div class="who-card reveal reveal-delay-1" role="listitem">
+        <div class="who-num">05</div>
+        <div class="who-title">Retail &amp; E-commerce</div>
+        <div class="who-desc">Product launches, flash sales, brand storytelling.</div>
+      </div>
+      <div class="who-card reveal reveal-delay-2" role="listitem">
+        <div class="who-num">06</div>
+        <div class="who-title">Hospitality &amp; Events</div>
+        <div class="who-desc">Hotels, venues, event spaces — fill your calendar.</div>
+      </div>
+    </div>
+
+    <p class="who-note reveal">Don't see your industry? We work with any UK or India business that has customers worth talking to.</p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     SECTION 5 — BRANDENGINE
+════════════════════════════════════ -->
+<section id="brandengine" aria-label="BrandEngine">
+  <div class="section-wrap">
+    <div class="brandengine-inner">
+      <div class="be-left">
+        <div class="eyebrow reveal">Our secret weapon</div>
+        <h2 class="section-headline reveal" style="font-style:italic;">We didn't buy an AI tool.<br><em>We built one.</em></h2>
+        <div class="gold-rule reveal" aria-hidden="true"></div>
+        <p class="be-intro reveal">
+          BrandEngine is our proprietary AI content system — built entirely in-house by CNR Digital. While other agencies use generic tools, we use an intelligent platform that knows your audience, follows UK advertising standards automatically, and learns what content drives results for your specific business.
+        </p>
+
+        <div class="be-features">
+          <div class="be-feature reveal">
+            <span class="be-arrow" aria-hidden="true">→</span>
+            <div class="be-feature-body">
+              <div class="be-feature-title">Audience intelligence</div>
+              <div class="be-feature-desc">Knows who your customers are, when they're online, and what triggers them to buy.</div>
+            </div>
+          </div>
+          <div class="be-feature reveal reveal-delay-1">
+            <span class="be-arrow" aria-hidden="true">→</span>
+            <div class="be-feature-body">
+              <div class="be-feature-title">Compliance engine</div>
+              <div class="be-feature-desc">Every post checked against UK ASA CAP Code and Meta platform rules automatically — before it ever reaches you.</div>
+            </div>
+          </div>
+          <div class="be-feature reveal reveal-delay-2">
+            <span class="be-arrow" aria-hidden="true">→</span>
+            <div class="be-feature-body">
+              <div class="be-feature-title">Campaign calendar</div>
+              <div class="be-feature-desc">Knows Eid, Christmas, payday weekend and Premier League nights are coming — suggests campaigns automatically.</div>
+            </div>
+          </div>
+          <div class="be-feature reveal reveal-delay-3">
+            <span class="be-arrow" aria-hidden="true">→</span>
+            <div class="be-feature-body">
+              <div class="be-feature-title">Performance learning</div>
+              <div class="be-feature-desc">Tracks what works for your audience. Does more of what wins.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="be-cta-block reveal">
+          <p class="be-cta-text">Every CNR Digital client gets BrandEngine included.</p>
+          <a href="#pricing" class="btn btn-outline">See how it works →</a>
+        </div>
+      </div>
+
+      <div class="be-right reveal">
+        <div class="be-card">
+          <div class="be-card-label">BrandEngine generates a post in</div>
+          <div class="be-card-time">30s</div>
+          <ul class="be-card-list">
+            <li class="be-card-item">Checked against 3 layers of compliance rules</li>
+            <li class="be-card-item">Optimised for your specific audience</li>
+            <li class="be-card-item">Published to Facebook, Instagram + Google</li>
+            <li class="be-card-item">While you focus on running your business</li>
+          </ul>
+          <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-solid" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Get BrandEngine →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how" class="section">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--gold);">How it works</div>
-    <h2 class="section-title" style="color:var(--white);">Getting started is simple</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Three steps and your social media is handled — for good.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-accent"></div>
+
+<!-- ════════════════════════════════════
+     SECTION 6 — HOW IT WORKS
+════════════════════════════════════ -->
+<section id="how" aria-label="How it works">
+  <div class="section-wrap">
+    <div class="how-intro reveal">
+      <div class="eyebrow">How it works</div>
+      <h2 class="section-headline">From brief to published<br><em>in 30 seconds.</em></h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="steps-grid" role="list">
+      <div class="step-card reveal" role="listitem">
+        <div class="step-bg-num" aria-hidden="true">01</div>
         <div class="step-num">01</div>
-        <h3>Book a Free Call</h3>
-        <p>A 30-minute conversation to understand your business, your goals, and which platforms make sense for you. No commitment.</p>
+        <div class="step-title">You give us a brief</div>
+        <div class="step-desc">One line about what you want to say — offer, new product, announcement. Or we suggest it based on your calendar.</div>
       </div>
-      <div class="step">
-        <div class="step-accent"></div>
+      <div class="step-card reveal reveal-delay-1" role="listitem">
+        <div class="step-bg-num" aria-hidden="true">02</div>
         <div class="step-num">02</div>
-        <h3>We Build Your Plan</h3>
-        <p>We create a content strategy, brand guidelines, and posting schedule tailored specifically to your business and your audience.</p>
+        <div class="step-title">BrandEngine thinks</div>
+        <div class="step-desc">Our AI applies your audience profile, brand rules, compliance checks, best call to action — then writes 3 branded variations.</div>
       </div>
-      <div class="step">
-        <div class="step-accent"></div>
+      <div class="step-card reveal reveal-delay-2" role="listitem">
+        <div class="step-bg-num" aria-hidden="true">03</div>
         <div class="step-num">03</div>
-        <h3>We Take It From Here</h3>
-        <p>We handle everything — creation, posting, ads, and reporting. You just review and approve. Your time stays on your business.</p>
+        <div class="step-title">You review and approve</div>
+        <div class="step-desc">A quality checklist on every post before it goes live. You stay in control — nothing publishes without your approval.</div>
+      </div>
+      <div class="step-card reveal reveal-delay-3" role="listitem">
+        <div class="step-bg-num" aria-hidden="true">04</div>
+        <div class="step-num">04</div>
+        <div class="step-title">It posts automatically</div>
+        <div class="step-desc">Facebook, Instagram and Google Business at the optimal time for your audience. Done.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHO IT'S FOR -->
-<section id="who" class="section">
-  <div class="section-inner">
-    <div class="section-label">Who it's for</div>
-    <h2 class="section-title">Built for businesses that are<br>too busy to do it themselves</h2>
-    <p class="section-sub">We work with owner-managed businesses across all industries who know they need to show up online — but don't have the time or team to make it happen.</p>
-    <div class="who-grid">
-      <div class="who-card"><div class="who-icon">🍽️</div><h4>Restaurants & Food</h4></div>
-      <div class="who-card"><div class="who-icon">🏪</div><h4>Retail & E-commerce</h4></div>
-      <div class="who-card"><div class="who-icon">⚙️</div><h4>Trades & Services</h4></div>
-      <div class="who-card"><div class="who-icon">🏥</div><h4>Health & Wellness</h4></div>
-      <div class="who-card"><div class="who-icon">🎓</div><h4>Education</h4></div>
-      <div class="who-card"><div class="who-icon">🏠</div><h4>Real Estate</h4></div>
-      <div class="who-card"><div class="who-icon">💼</div><h4>Professional Services</h4></div>
-      <div class="who-card"><div class="who-icon">🚀</div><h4>Startups</h4></div>
+
+<!-- ════════════════════════════════════
+     SECTION 7 — PRICING
+════════════════════════════════════ -->
+<section id="pricing" aria-label="Pricing">
+  <div class="section-wrap">
+    <div class="pricing-intro reveal">
+      <div class="eyebrow">Simple pricing</div>
+      <h2 class="section-headline">Agency quality.<br><em>Not agency prices.</em></h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="body-text" style="margin-bottom:0;">Traditional agencies charge £500–£2,000 per month and still need briefing, chasing, and revisions. BrandEngine delivers the same output automatically — at a fraction of the cost.</p>
     </div>
-  </div>
-</section>
 
-<!-- WHY US -->
-<section id="why" class="section">
-  <div class="section-inner">
-    <div class="why-grid">
-      <div>
-        <div class="section-label">Why CNR Digital</div>
-        <h2 class="section-title">Social media done right,<br>without the agency price tag</h2>
-        <div class="why-points">
-          <div class="why-point">
-            <div class="why-num">1</div>
-            <div>
-              <h4>Fully managed — zero effort from you</h4>
-              <p>We handle content creation, scheduling, posting, and community management. You approve, we execute.</p>
-            </div>
-          </div>
-          <div class="why-point">
-            <div class="why-num">2</div>
-            <div>
-              <h4>Consistent, professional content every week</h4>
-              <p>No more gaps, no more rushed posts. Your audience sees a brand that's active and credible.</p>
-            </div>
-          </div>
-          <div class="why-point">
-            <div class="why-num">3</div>
-            <div>
-              <h4>Transparent reporting — you always know the results</h4>
-              <p>Monthly reports showing reach, engagement, and what's working. No jargon, just clear numbers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="why-visual">
-        <div class="why-quote">"Your customers are on social media right now — searching for businesses like yours. If you're not showing up consistently, they're choosing your competitors."</div>
-        <div class="why-quote-attr">— The reality for most small businesses</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="section">
-  <div class="section-inner">
-    <div class="section-label">Plans</div>
-    <h2 class="section-title">Simple, transparent pricing</h2>
-    <p class="section-sub">No long contracts. Cancel any time.</p>
-    <div class="pricing-grid">
-
-      <!-- Card 1: Self-Service -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Self-Service</div>
-        <div class="pricing-price">£49<span>/month</span></div>
-        <div class="pricing-desc">You stay in control</div>
-        <ul class="pricing-features">
-          <li>AI post generation</li>
-          <li>5-tap mobile approval</li>
-          <li>Facebook &amp; Instagram posting</li>
-          <li>Monthly report</li>
+    <div class="pricing-grid" role="list">
+      <!-- STARTER -->
+      <div class="price-card reveal" role="listitem">
+        <div class="price-name">Starter</div>
+        <div class="price-amount">£49</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider" aria-hidden="true"></div>
+        <ul class="price-features">
+          <li class="price-feature">Facebook + Instagram posting</li>
+          <li class="price-feature">1 AI-generated post per day</li>
+          <li class="price-feature">4-week content schedule</li>
+          <li class="price-feature">Compliance engine included</li>
+          <li class="price-feature">Quality gate on every post</li>
+          <li class="price-feature">Campaign calendar suggestions</li>
         </ul>
-        <a href="#contact" class="pricing-btn">Get started</a>
+        <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Get started →</a>
       </div>
 
-      <!-- Card 2: Assisted (featured) -->
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-tier">Assisted</div>
-        <div class="pricing-price">£79<span>/month</span></div>
-        <div class="pricing-desc">We do the heavy lifting</div>
-        <ul class="pricing-features">
-          <li>Everything in Self-Service</li>
-          <li>Weekly content by email or form</li>
-          <li>Caption &amp; image refinement</li>
-          <li>Priority support</li>
+      <!-- GROWTH (featured) -->
+      <div class="price-card featured reveal reveal-delay-1" role="listitem">
+        <div class="price-badge">Most popular</div>
+        <div class="price-name">Growth</div>
+        <div class="price-amount">£79</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider" aria-hidden="true"></div>
+        <ul class="price-features">
+          <li class="price-feature">Everything in Starter</li>
+          <li class="price-feature">Google Business Posts</li>
+          <li class="price-feature">2 posts per day</li>
+          <li class="price-feature">Brand image overlay</li>
+          <li class="price-feature">Performance dashboard</li>
+          <li class="price-feature">Platform optimisation per channel</li>
         </ul>
-        <a href="#contact" class="pricing-btn">Get started</a>
+        <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-solid" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Get started →</a>
       </div>
 
-      <!-- Card 3: Full Managed -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Full Managed</div>
-        <div class="pricing-price">£99<span>/month</span></div>
-        <div class="pricing-desc">Completely hands-off</div>
-        <ul class="pricing-features">
-          <li>Everything in Assisted</li>
-          <li>WhatsApp check-in Sunday only</li>
-          <li>We handle everything</li>
-          <li>Dedicated account manager</li>
+      <!-- PRO -->
+      <div class="price-card reveal reveal-delay-2" role="listitem">
+        <div class="price-name">Pro</div>
+        <div class="price-amount">£99</div>
+        <div class="price-period">per month</div>
+        <div class="price-divider" aria-hidden="true"></div>
+        <ul class="price-features">
+          <li class="price-feature">Everything in Growth</li>
+          <li class="price-feature">TikTok posting</li>
+          <li class="price-feature">Instagram Reels</li>
+          <li class="price-feature">Short video content</li>
+          <li class="price-feature">Dedicated account manager</li>
+          <li class="price-feature">WhatsApp marketing engine</li>
         </ul>
-        <a href="#contact" class="pricing-btn">Get started</a>
+        <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-outline" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center;">Get started →</a>
       </div>
+    </div>
 
+    <p class="pricing-compare reveal">Traditional agencies charge £500–£2,000/month for the same output. BrandEngine delivers it automatically.</p>
+    <div class="pricing-cta reveal">
+      <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-solid" target="_blank" rel="noopener noreferrer">Start with a free consultation</a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="section-inner">
-    <div class="section-label" style="color:var(--gold);">Get in touch</div>
-    <h2 class="section-title" style="color:var(--white);">Book your free 30-minute call</h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5);">Tell us about your business and we'll tell you exactly how we can help — no hard sell, no obligation.</p>
-    <div class="contact-grid">
-      <form action="https://formspree.io/f/hello@cnrdigital.co.uk" method="POST">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="John Smith" required>
+
+<!-- ════════════════════════════════════
+     SECTION 8 — LIVE CLIENTS
+════════════════════════════════════ -->
+<section id="clients" aria-label="Live clients">
+  <div class="section-wrap">
+    <div class="clients-intro reveal">
+      <div class="eyebrow">Live clients</div>
+      <h2 class="section-headline">Real businesses.<br><em>Posting every day.</em></h2>
+      <div class="gold-rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="clients-grid" role="list">
+      <div class="client-card reveal" role="listitem">
+        <div class="client-live-row">
+          <div class="live-dot" aria-hidden="true"></div>
+          <div class="live-label">Live</div>
         </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="email" placeholder="john@yourbusiness.com" required>
-        </div>
-        <div class="form-group">
-          <label>Business Name</label>
-          <input type="text" name="business" placeholder="Your Business Ltd">
-        </div>
-        <div class="form-group">
-          <label>What do you need help with?</label>
-          <select name="service">
-            <option value="">Select a service...</option>
-            <option>Social Media Management</option>
-            <option>Content Creation</option>
-            <option>Paid Advertising</option>
-            <option>Brand Strategy</option>
-            <option>Not sure — let's talk</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tell us about your business</label>
-          <textarea name="message" placeholder="What does your business do? What's your biggest social media challenge?"></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%;">Send — Book My Free Call</button>
-      </form>
-      <div class="contact-info">
-        <h3>We'd love to hear from you</h3>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📧</div>
-          <div class="contact-detail-text">
-            <strong>Email us directly</strong>
-            <a href="mailto:hello@cnrdigital.co.uk">hello@cnrdigital.co.uk</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📘</div>
-          <div class="contact-detail-text">
-            <strong>Follow us on Facebook</strong>
-            <a href="https://www.facebook.com/profile.php?id=61579540708624" target="_blank">CNR Digital</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📸</div>
-          <div class="contact-detail-text">
-            <strong>Follow us on Instagram</strong>
-            <a href="https://www.instagram.com/cnrdigitaluk/" target="_blank">@cnrdigitaluk</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">💬</div>
-          <div class="contact-detail-text">
-            <strong>Chat on WhatsApp</strong>
-            <a href="https://wa.me/447466378364" target="_blank" rel="noopener noreferrer">+44 7466 378364</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">💼</div>
-          <div class="contact-detail-text">
-            <strong>Follow on LinkedIn</strong>
-            <a href="https://linkedin.com/company/cnrdigital-uk" target="_blank" rel="noopener noreferrer">CNR Digital</a>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">⏱️</div>
-          <div class="contact-detail-text">
-            <strong>Response time</strong>
-            We respond same day, Mon–Fri. Usually within a few hours.
-          </div>
+        <div class="client-name">CNR Digital</div>
+        <div class="client-type">Social media agency</div>
+        <div class="client-quote">"BrandEngine manages our own social media — we use what we sell."</div>
+        <div class="client-stats">
+          <div class="stat-chip">24+ posts</div>
+          <div class="stat-chip">FB + IG</div>
+          <div class="stat-chip">Live</div>
         </div>
       </div>
+
+      <div class="client-card reveal reveal-delay-1" role="listitem">
+        <div class="client-live-row">
+          <div class="live-dot" aria-hidden="true"></div>
+          <div class="live-label">Live</div>
+        </div>
+        <div class="client-name">CNR Study Abroad</div>
+        <div class="client-type">Education consultancy</div>
+        <div class="client-quote">"Reaching Indian students and families at the right time every day."</div>
+        <div class="client-stats">
+          <div class="stat-chip">Active</div>
+          <div class="stat-chip">FB + IG</div>
+          <div class="stat-chip">Live</div>
+        </div>
+      </div>
+
+      <div class="client-card reveal reveal-delay-2" role="listitem">
+        <div class="client-live-row">
+          <div class="live-dot" style="background:#f59e0b;animation:none;" aria-hidden="true"></div>
+          <div class="live-label" style="color:#f59e0b;">Onboarding</div>
+        </div>
+        <div class="client-name">Plaza Pizza Whitley Bay</div>
+        <div class="client-type">Food takeaway</div>
+        <div class="client-quote">"Daily appetite-driven content, timed for lunch and dinner peaks."</div>
+        <div class="client-stats">
+          <div class="stat-chip">Onboarding</div>
+          <div class="stat-chip">FB + IG</div>
+          <div class="stat-chip">Going live</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clients-pullquote reveal">
+      <p class="pq-text">"We didn't want another agency. We wanted something that actually works automatically. BrandEngine does exactly that."</p>
+      <div class="pq-attr">— CNR Digital internal</div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <a class="footer-logo" href="#">
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="ft-pg" cx="38%" cy="32%" r="72%">
-          <stop offset="0%" stop-color="#1a3060"/>
-          <stop offset="100%" stop-color="#0a1628"/>
-        </radialGradient>
-        <linearGradient id="ft-gd" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d8b86a"/>
-          <stop offset="55%" stop-color="#c9a84c"/>
-          <stop offset="100%" stop-color="#a8852e"/>
-        </linearGradient>
-        <clipPath id="ft-clip"><circle cx="200" cy="200" r="198"/></clipPath>
-      </defs>
-      <rect width="400" height="400" fill="url(#ft-pg)" clip-path="url(#ft-clip)"/>
-      <circle cx="200" cy="200" r="178" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4" clip-path="url(#ft-clip)"/>
-      <text x="200" y="226" font-family="Georgia,serif" font-size="154" font-weight="700" text-anchor="middle" fill="url(#ft-gd)" letter-spacing="4" clip-path="url(#ft-clip)">CNR</text>
-      <line x1="68" y1="258" x2="332" y2="258" stroke="#c9a84c" stroke-width="1.2" opacity="0.65"/>
-      <text x="200" y="300" font-family="Georgia,serif" font-size="30" font-weight="400" text-anchor="middle" fill="url(#ft-gd)" letter-spacing="10" clip-path="url(#ft-clip)">DIGITAL</text>
-    </svg>
-  </a>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#how">How it works</a>
-    <a href="#contact">Contact</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="https://www.facebook.com/profile.php?id=61579540708624" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/cnrdigitaluk/" target="_blank">Instagram</a>
-    <a href="https://wa.me/447466378364" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:#c9a84c;text-decoration:none;">💬 WhatsApp us: +44 7466 378364</a>
+
+<!-- ════════════════════════════════════
+     SECTION 9 — FINAL CTA
+════════════════════════════════════ -->
+<section id="cta" aria-label="Get in touch">
+  <div class="cta-inner">
+    <div class="eyebrow reveal" style="justify-content:center;">Ready to grow?</div>
+    <h2 class="cta-headline reveal">Let's talk about<br><em style="font-style:italic;color:var(--gold-light);">your business.</em></h2>
+    <div class="gold-rule reveal" style="margin:0 auto 28px;" aria-hidden="true"></div>
+    <p class="cta-sub reveal">
+      Free 15-minute consultation. No pitch, no pressure.<br>
+      Just an honest conversation about what BrandEngine can do for your social media.
+    </p>
+    <div class="cta-btn-wrap reveal">
+      <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" class="btn btn-solid" target="_blank" rel="noopener noreferrer" style="font-size:0.85rem;padding:18px 40px;">Chat on WhatsApp →</a>
+    </div>
+    <div class="cta-reassurance reveal">
+      <div class="cta-reassure-item">Reply within 5 minutes</div>
+      <div class="cta-reassure-item">No obligation</div>
+      <div class="cta-reassure-item">UK &amp; India: +44 — weekdays 9am–7pm BST</div>
+    </div>
+    <p class="cta-email reveal">Or email: <a href="mailto:contact@cnrdigital.co.uk">contact@cnrdigital.co.uk</a></p>
   </div>
-  <div class="footer-copy">© 2026 CNR Digital · Aylesbury, UK · cnrdigital.co.uk</div>
+</section>
+
+
+<!-- ════════════════════════════════════
+     SECTION 10 — FOOTER
+════════════════════════════════════ -->
+<footer id="footer" aria-label="Footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">CNR Digital</div>
+      <p class="footer-tagline">AI-Powered Social Media Agency<br>Aylesbury, UK · Serving UK &amp; India</p>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <div class="footer-col-title">Quick links</div>
+      <ul class="footer-links" role="list">
+        <li><a href="#who">Services</a></li>
+        <li><a href="#brandengine">BrandEngine</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#who">Who We Help</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="footer-col-title">Get in touch</div>
+      <div class="footer-contact">
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">WhatsApp</span>
+          <a href="https://wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer">wa.me/REPLACE_WITH_REAL_WHATSAPP_NUMBER</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Email</span>
+          <a href="mailto:contact@cnrdigital.co.uk">contact@cnrdigital.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Instagram</span>
+          <a href="https://instagram.com/cnrdigitaluk" target="_blank" rel="noopener noreferrer">@cnrdigitaluk</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-label">Facebook</span>
+          <a href="https://facebook.com/cnrdigital" target="_blank" rel="noopener noreferrer">CNR Digital</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <p class="footer-copy">© 2026 CNR Digital · Built in Aylesbury · Powered by <span>BrandEngine</span></p>
+    <a href="/privacy.html" style="font-size:0.7rem;color:var(--muted);transition:color 0.2s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">Privacy Policy</a>
+  </div>
 </footer>
 
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── HAMBURGER MENU ── */
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close on link click
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ── SCROLL REVEAL ── */
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    // Fallback: show all
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ── NAV BACKGROUND INTENSITY ON SCROLL ── */
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      navEl.style.background = 'rgba(10,22,40,0.99)';
+    } else {
+      navEl.style.background = 'rgba(10,22,40,0.96)';
+    }
+  }, { passive: true });
+
+  /* ── SMOOTH SCROLL FOR ANCHOR LINKS ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var targetId = this.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        var offset = 64; // nav height
+        var targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
