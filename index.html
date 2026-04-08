@@ -1723,6 +1723,75 @@
         gap: 12px;
       }
     }
+
+    /* ── COMING SOON SECTION ── */
+    #coming-soon {
+      background: var(--navy);
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .coming-soon-intro {
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gap-line);
+    }
+
+    .coming-soon-card {
+      background: var(--navy);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coming-soon-card::before {
+      content: 'Coming Soon';
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 3px 8px;
+      opacity: 0.7;
+    }
+
+    .cs-icon {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .cs-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .cs-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .coming-soon-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1742,8 +1811,12 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#cta">Contact</a></li>
       </ul>
-      <a href="https://wa.me/447466378364" class="btn btn-outline nav-cta" target="_blank"
-        rel="noopener noreferrer">Chat on WhatsApp</a>
+      <div class="nav-cta" style="display:flex;gap:10px;align-items:center;">
+        <a href="https://app.cnrdigital.co.uk" class="btn btn-solid" target="_blank"
+          rel="noopener noreferrer" style="font-size:0.72rem;padding:12px 20px;">Login to BrandEngine →</a>
+        <a href="https://wa.me/447466378364" class="btn btn-outline" target="_blank"
+          rel="noopener noreferrer">Chat on WhatsApp</a>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -1758,8 +1831,10 @@
     <a href="#principles" class="mobile-link">Principles</a>
     <a href="#pricing" class="mobile-link">Pricing</a>
     <a href="#cta" class="mobile-link">Contact</a>
+    <a href="https://app.cnrdigital.co.uk" target="_blank" rel="noopener noreferrer"
+      style="color:var(--gold);font-weight:700;">Login to BrandEngine →</a>
     <a href="https://wa.me/447466378364" target="_blank" rel="noopener noreferrer"
-      style="color:var(--gold);font-weight:700;">Chat on WhatsApp →</a>
+      style="color:var(--muted);font-weight:500;">Chat on WhatsApp →</a>
   </div>
 
 
@@ -1783,7 +1858,9 @@
           We manage your Facebook, Instagram and Google presence automatically using BrandEngine — our own AI system.
           You get agency quality at a fraction of the cost.
         </p>
-        <div class="hero-cta">
+        <div class="hero-cta" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+          <a href="https://app.cnrdigital.co.uk/onboarding" class="btn btn-solid" target="_blank"
+            rel="noopener noreferrer">Start Free Trial →</a>
           <a href="https://wa.me/447466378364" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get
             Free Consultation</a>
         </div>
@@ -1814,7 +1891,7 @@
         </div>
         <!-- Card 3: Platforms -->
         <div class="stat-card">
-          <div class="stat-num" style="font-size:1.6rem;letter-spacing:-0.02em;">FB · IG · GBP</div>
+          <div class="stat-num" style="font-size:0.95rem;letter-spacing:0.02em;line-height:1.6;">FB · IG · GBP<br>WhatsApp · LinkedIn · YouTube</div>
           <div class="stat-label">Platforms supported</div>
         </div>
         <!-- Card 4: AI-Powered -->
@@ -1833,7 +1910,7 @@
 ════════════════════════════════════ -->
   <div id="trust-bar" role="complementary" aria-label="Trust signals">
     <div class="trust-bar-inner">
-      <div class="trust-signal"><span class="icon">⭐</span> 3 Live Clients Posting Daily</div>
+      <div class="trust-signal"><span class="icon">⭐</span> 4 Live Clients Posting Daily</div>
       <div class="trust-signal"><span class="icon">⚡</span> Posts Generated in 30 Seconds</div>
       <div class="trust-signal"><span class="icon">✔</span> UK ASA Compliant Content</div>
       <div class="trust-signal"><span class="icon">🇬🇧</span> Based in Aylesbury, UK</div>
@@ -2159,7 +2236,49 @@
 
 
   <!-- ════════════════════════════════════
-     SECTION 7 — PRICING
+     SECTION 7 — COMING SOON
+════════════════════════════════════ -->
+  <section id="coming-soon" aria-label="Coming soon features">
+    <div class="section-wrap">
+      <div class="coming-soon-intro reveal">
+        <div class="eyebrow">What's next</div>
+        <h2 class="section-headline">More power.<br><em>Coming soon.</em></h2>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <p class="body-text">BrandEngine is growing fast. Here's what we're building next — features already in
+          development that will make your brand even harder to ignore.</p>
+      </div>
+      <div class="coming-soon-grid" role="list">
+        <div class="coming-soon-card reveal" role="listitem">
+          <div class="cs-icon">🎨</div>
+          <div class="cs-title">Creative Boost</div>
+          <div class="cs-desc">AI-generated scroll-stopping visuals. BrandEngine creates on-brand images that stop the
+            thumb and drive engagement — no designer required.</div>
+        </div>
+        <div class="coming-soon-card reveal reveal-delay-1" role="listitem">
+          <div class="cs-icon">📸</div>
+          <div class="cs-title">Snap &amp; Post</div>
+          <div class="cs-desc">Photo to published post in 30 seconds. Take a picture of your food, your team, or your
+            product — BrandEngine writes the caption and posts it.</div>
+        </div>
+        <div class="coming-soon-card reveal reveal-delay-2" role="listitem">
+          <div class="cs-icon">💬</div>
+          <div class="cs-title">WhatsApp Channel</div>
+          <div class="cs-desc">Broadcast to your customers directly. Build a WhatsApp subscriber list and send
+            promotions, menus, and updates straight to their phones.</div>
+        </div>
+        <div class="coming-soon-card reveal reveal-delay-3" role="listitem">
+          <div class="cs-icon">📍</div>
+          <div class="cs-title">Google Business Posts</div>
+          <div class="cs-desc">Appear in local search automatically. BrandEngine posts to your Google Business Profile
+            so you show up when customers search nearby.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════
+     SECTION 8 — PRICING
 ════════════════════════════════════ -->
   <section id="pricing" aria-label="Pricing">
     <div class="section-wrap">
@@ -2187,6 +2306,8 @@
             <li class="price-feature">Quality gate on every post</li>
             <li class="price-feature">Campaign calendar suggestions</li>
           </ul>
+          <a href="https://app.cnrdigital.co.uk/onboarding" class="btn btn-solid" target="_blank"
+            rel="noopener noreferrer" style="width:100%;justify-content:center;margin-bottom:8px;">Start Free Trial →</a>
           <a href="https://wa.me/447466378364" class="btn btn-outline" target="_blank" rel="noopener noreferrer"
             style="width:100%;justify-content:center;">Get started →</a>
         </div>
@@ -2218,11 +2339,10 @@
           <div class="price-divider" aria-hidden="true"></div>
           <ul class="price-features">
             <li class="price-feature">Everything in Growth</li>
-            <li class="price-feature">TikTok posting</li>
-            <li class="price-feature">Instagram Reels</li>
-            <li class="price-feature">Short video content</li>
-            <li class="price-feature">Dedicated account manager</li>
             <li class="price-feature">WhatsApp marketing engine</li>
+            <li class="price-feature">LinkedIn posting</li>
+            <li class="price-feature">YouTube</li>
+            <li class="price-feature">Dedicated account manager</li>
           </ul>
           <a href="https://wa.me/447466378364" class="btn btn-outline" target="_blank" rel="noopener noreferrer"
             style="width:100%;justify-content:center;">Get started →</a>
@@ -2261,7 +2381,7 @@
           <div class="client-quote">"BrandEngine manages our own social media — we use what we sell."</div>
           <div class="client-stats">
             <div class="stat-chip">24+ posts</div>
-            <div class="stat-chip">FB + IG</div>
+            <div class="stat-chip">FB + IG + LinkedIn</div>
             <div class="stat-chip">Live</div>
           </div>
         </div>
@@ -2283,16 +2403,46 @@
 
         <div class="client-card reveal reveal-delay-2" role="listitem">
           <div class="client-live-row">
-            <div class="live-dot" style="background:#f59e0b;animation:none;" aria-hidden="true"></div>
-            <div class="live-label" style="color:#f59e0b;">Onboarding</div>
+            <div class="live-dot" aria-hidden="true"></div>
+            <div class="live-label">Live</div>
+          </div>
+          <div class="client-name">Klers Fish and Chips</div>
+          <div class="client-type">Food takeaway</div>
+          <div class="client-quote">"Consistent daily content keeping us front of mind in the local area."</div>
+          <div class="client-stats">
+            <div class="stat-chip">Active</div>
+            <div class="stat-chip">FB + IG</div>
+            <div class="stat-chip">Live</div>
+          </div>
+        </div>
+
+        <div class="client-card reveal" role="listitem">
+          <div class="client-live-row">
+            <div class="live-dot" aria-hidden="true"></div>
+            <div class="live-label">Live</div>
           </div>
           <div class="client-name">Plaza Pizza Whitley Bay</div>
           <div class="client-type">Food takeaway</div>
           <div class="client-quote">"Daily appetite-driven content, timed for lunch and dinner peaks."</div>
           <div class="client-stats">
-            <div class="stat-chip">Onboarding</div>
+            <div class="stat-chip">Active</div>
             <div class="stat-chip">FB + IG</div>
-            <div class="stat-chip">Going live</div>
+            <div class="stat-chip">Live</div>
+          </div>
+        </div>
+
+        <div class="client-card reveal reveal-delay-1" role="listitem">
+          <div class="client-live-row">
+            <div class="live-dot" style="background:#f59e0b;animation:none;" aria-hidden="true"></div>
+            <div class="live-label" style="color:#f59e0b;">Coming Soon</div>
+          </div>
+          <div class="client-name">iSwadesi Indian Groceries &amp; Vegetables</div>
+          <div class="client-type">Indian Grocery &amp; Fresh Food · Aylesbury</div>
+          <div class="client-quote">"Fresh produce, authentic brands — bringing the Indian grocery experience to
+            Aylesbury."</div>
+          <div class="client-stats">
+            <div class="stat-chip">Coming Soon</div>
+            <div class="stat-chip">FB + IG</div>
           </div>
         </div>
       </div>
