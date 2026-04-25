@@ -620,319 +620,157 @@
     }
 
     /* ══════════════════════════════════════
-   SECTION 5 — BRANDENGINE
+   SOUND FAMILIAR
 ══════════════════════════════════════ */
-    #brandengine {
+    #sound-familiar {
       background: var(--navy-light);
       padding: 100px 0;
       border-top: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
     }
 
-    #brandengine::before {
-      content: '';
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.06);
-      top: -150px;
-      right: -100px;
-      pointer-events: none;
+    .sf-intro {
+      max-width: 620px;
+      margin-bottom: 56px;
     }
 
-    #brandengine::after {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.06);
-      top: 0;
-      right: 60px;
-      pointer-events: none;
-    }
-
-    .brandengine-inner {
+    .sf-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gap-line);
     }
 
-    .be-left {}
-
-    .be-intro {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 36px;
-    }
-
-    .be-features {
+    .sf-card {
+      background: var(--navy-mid);
+      padding: 28px 28px 28px 24px;
       display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .be-feature {
-      display: flex;
-      gap: 16px;
       align-items: flex-start;
+      gap: 18px;
+      transition: background 0.25s ease;
     }
 
-    .be-arrow {
-      color: var(--gold);
-      font-size: 1rem;
-      font-weight: 700;
+    .sf-card:hover {
+      background: var(--navy-light);
+    }
+
+    .sf-icon {
+      font-size: 1.5rem;
       flex-shrink: 0;
       margin-top: 2px;
     }
 
-    .be-feature-body {}
+    .sf-card-body {}
 
-    .be-feature-title {
+    .sf-headline {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .sf-support {
       font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-
-    .be-feature-desc {
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .be-right {}
-
-    .be-card {
-      background: var(--navy-mid);
-      border: 1px solid var(--border-card);
-      padding: 40px 36px;
-      position: sticky;
-      top: 88px;
-    }
-
-    .be-card-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .be-card-time {
-      font-family: 'EB Garamond', serif;
-      font-size: 5rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 32px;
-    }
-
-    .be-card-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 36px;
-    }
-
-    .be-card-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: var(--white);
-    }
-
-    .be-card-item::before {
-      content: '';
-      display: block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .be-cta-block {
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    .be-cta-text {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--white);
-      flex: 1;
-      min-width: 200px;
-    }
-
-    /* ══════════════════════════════════════
-   SECTION 5b — BRANDENGINE PRINCIPLES
-══════════════════════════════════════ */
-    #principles {
-      background: var(--navy-mid);
-      padding: 100px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .principles-intro {
-      max-width: 600px;
-      margin-bottom: 48px;
-    }
-    .principles-sub {
-      font-size: 0.9rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-    /* Golden rule banner */
-    .golden-rule-banner {
-      background: rgba(201,168,76,0.05);
-      border: 1px solid rgba(201,168,76,0.25);
-      padding: 20px 28px;
-      text-align: center;
-      margin-bottom: 56px;
-    }
-    .golden-rule-label {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .golden-rule-quote {
-      font-family: 'EB Garamond', serif;
-      font-style: italic;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--white);
-      line-height: 1.7;
-    }
-    .golden-rule-quote strong {
-      font-style: normal;
-      font-weight: 700;
-      color: var(--gold);
-    }
-    /* Principle groups */
-    .principle-group {
-      margin-bottom: 40px;
-    }
-    .principle-group:last-child {
-      margin-bottom: 0;
-    }
-    .principle-group-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1px;
-    }
-    .principle-group-label::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-    .principle-cards {
-      display: grid;
-      gap: 1px;
-      background: var(--gap-line);
-    }
-    .principle-cards.cols-3 { grid-template-columns: repeat(3, 1fr); }
-    .principle-cards.cols-4 { grid-template-columns: repeat(4, 1fr); }
-    .principle-cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
-    .principle-card {
-      background: var(--navy);
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.25s ease;
-    }
-    .principle-card:hover { background: var(--navy-mid); }
-    .principle-card.accent { border-top: 2px solid var(--gold); }
-    .principle-card-watermark {
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-family: 'EB Garamond', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--gold);
-      opacity: 0.15;
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-    .principle-card-title {
-      font-family: 'EB Garamond', serif;
-      font-size: 0.9375rem; /* 15px */
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-      position: relative;
-    }
-    .principle-card.accent .principle-card-title { color: var(--gold); }
-    .principle-card-desc {
-      font-size: 0.6875rem; /* 11px */
       font-weight: 300;
       color: var(--muted);
       line-height: 1.6;
-      position: relative;
     }
 
     /* ══════════════════════════════════════
-   SECTION 6 — HOW IT WORKS
+   WHAT WE DO FOR YOU
 ══════════════════════════════════════ */
-    #how {
+    #what-we-do {
       background: var(--navy);
       padding: 100px 0;
       border-top: 1px solid var(--border);
     }
 
-    .how-intro {
-      max-width: 480px;
+    .wwd-intro {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    .wwd-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gap-line);
+      margin-bottom: 40px;
+    }
+
+    .wwd-card {
+      background: var(--navy-mid);
+      padding: 32px 28px;
+      border-top: 2px solid rgba(201, 168, 76, 0.2);
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .wwd-card:hover {
+      background: var(--navy-light);
+      border-top-color: var(--gold);
+    }
+
+    .wwd-check {
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .wwd-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .wwd-desc {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .wwd-note {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      font-style: italic;
+    }
+
+    /* ══════════════════════════════════════
+   A REAL DAY WITH BRANDENGINE
+══════════════════════════════════════ */
+    #real-day {
+      background: var(--navy-light);
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .rd-intro {
+      max-width: 560px;
       margin-bottom: 60px;
     }
 
-    .steps-grid {
+    .rd-timeline {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1px;
       background: var(--gap-line);
     }
 
-    .step-card {
-      background: var(--navy);
-      padding: 36px 28px;
+    .rd-step {
+      background: var(--navy-mid);
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       position: relative;
-      overflow: hidden;
-      cursor: default;
     }
 
-    .step-card::before {
+    .rd-step::before {
       content: '';
       position: absolute;
       top: 0;
@@ -945,49 +783,107 @@
       transition: transform 0.35s ease;
     }
 
-    .step-card:hover::before {
+    .rd-step:hover::before {
       transform: scaleX(1);
     }
 
-    .step-card:hover {
-      background: var(--navy-mid);
-    }
-
-    .step-bg-num {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-family: 'EB Garamond', serif;
-      font-size: 4.5rem;
+    .rd-time {
+      font-size: 0.6rem;
       font-weight: 700;
-      color: rgba(201, 168, 76, 0.07);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .step-num {
-      font-family: 'EB Garamond', serif;
-      font-size: 1rem;
-      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
-    .step-title {
+    .rd-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .rd-desc {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .rd-tagline {
+      text-align: center;
+      margin-top: 36px;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+    }
+
+    /* ══════════════════════════════════════
+   WHY YOU CAN TRUST IT
+══════════════════════════════════════ */
+    #trust {
+      background: var(--navy-mid);
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .trust-intro {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    .trust-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gap-line);
+      margin-bottom: 36px;
+    }
+
+    .trust-card {
+      background: var(--navy);
+      padding: 36px 28px;
+      border-top: 2px solid rgba(201, 168, 76, 0.2);
+      transition: border-top-color 0.25s ease, background 0.25s ease;
+    }
+
+    .trust-card:hover {
+      background: var(--navy-light);
+      border-top-color: var(--gold);
+    }
+
+    .trust-card-check {
+      font-size: 1.4rem;
+      color: #22c55e;
+      margin-bottom: 18px;
+    }
+
+    .trust-card-title {
       font-family: 'EB Garamond', serif;
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 12px;
-      line-height: 1.3;
     }
 
-    .step-desc {
+    .trust-card-detail {
       font-size: 0.78rem;
       font-weight: 300;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.75;
+    }
+
+    .trust-tagline {
+      text-align: center;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-top: 8px;
     }
 
     /* ══════════════════════════════════════
@@ -1529,40 +1425,32 @@
         gap: 40px;
       }
 
-      .brandengine-inner {
-        gap: 48px;
+      .rd-timeline {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .steps-grid {
+      .platforms-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width:768px) {
 
-      /* Principles section */
-      #principles { padding: 72px 0; }
-      .principle-cards.cols-3,
-      .principle-cards.cols-4,
-      .principle-cards.cols-2 { grid-template-columns: repeat(2, 1fr); }
-      .principle-card { padding: 14px; }
-      .golden-rule-quote { font-size: 0.875rem; }
-
       /* Minimum 14px body text on mobile */
-      .who-desc,
-      .step-desc,
-      .be-feature-desc,
-      .be-feature-title,
+      .wwd-desc,
+      .sf-support,
+      .rd-desc,
+      .trust-card-detail,
+      .platform-desc,
       .price-feature,
       .client-quote,
       .body-text,
-      .be-intro,
       .trust-line,
       .footer-links a,
       .footer-contact-item,
       .stat-label,
       .stat-sub,
-      .who-note,
+      .wwd-note,
       .cta-sub {
         font-size: 0.875rem;
         /* = 14px at 16px base */
@@ -1609,33 +1497,48 @@
         padding: 0 24px;
       }
 
-      #who {
+      #sound-familiar {
         padding: 72px 0;
       }
 
-      .who-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      #brandengine {
-        padding: 72px 0;
-      }
-
-      .brandengine-inner {
+      .sf-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
       }
 
-      .be-card {
-        position: static;
-      }
-
-      #how {
+      #what-we-do {
         padding: 72px 0;
       }
 
-      .steps-grid {
+      .wwd-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      #real-day {
+        padding: 72px 0;
+      }
+
+      .rd-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      #trust {
+        padding: 72px 0;
+      }
+
+      .trust-cards {
+        grid-template-columns: 1fr;
+      }
+
+      #platforms {
+        padding: 72px 0;
+      }
+
+      #examples {
+        padding: 72px 0;
+      }
+
+      .examples-grid {
+        grid-template-columns: 1fr;
       }
 
       #pricing {
@@ -1678,11 +1581,6 @@
         padding: 20px 24px 28px;
       }
 
-      /* Principles 1 col at 480px */
-      .principle-cards.cols-3,
-      .principle-cards.cols-4,
-      .principle-cards.cols-2 { grid-template-columns: 1fr; }
-
       .hero-inner {
         padding: 0 20px;
       }
@@ -1695,11 +1593,7 @@
         grid-template-columns: 1fr;
       }
 
-      .who-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .steps-grid {
+      .wwd-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1723,71 +1617,143 @@
       }
     }
 
-    /* ── COMING SOON SECTION ── */
-    #coming-soon {
+    /* ══════════════════════════════════════
+   WHERE YOUR POSTS GO
+══════════════════════════════════════ */
+    #platforms {
       background: var(--navy);
       padding: 100px 0;
       border-top: 1px solid var(--border);
     }
 
-    .coming-soon-intro {
+    .platforms-intro {
       max-width: 560px;
       margin-bottom: 56px;
     }
 
-    .coming-soon-grid {
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gap-line);
+      margin-bottom: 36px;
+    }
+
+    .platform-card {
+      background: var(--navy-mid);
+      padding: 32px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: background 0.25s ease;
+    }
+
+    .platform-card:hover {
+      background: var(--navy-light);
+    }
+
+    .platform-icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .platform-info {}
+
+    .platform-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .platform-desc {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .platforms-footer {
+      text-align: center;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold-light);
+    }
+
+    /* ══════════════════════════════════════
+   EXAMPLES FOR A NORMAL WEEK
+══════════════════════════════════════ */
+    #examples {
+      background: var(--navy-light);
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .examples-intro {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    .examples-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--gap-line);
     }
 
-    .coming-soon-card {
-      background: var(--navy);
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
+    .example-card {
+      background: var(--navy-mid);
+      padding: 28px 28px 32px;
     }
 
-    .coming-soon-card::before {
-      content: 'Coming Soon';
-      position: absolute;
-      top: 18px;
-      right: 20px;
+    .example-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .example-day {
       font-size: 0.6rem;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      border: 1px solid var(--gold);
-      padding: 3px 8px;
-      opacity: 0.7;
+      white-space: nowrap;
     }
 
-    .cs-icon {
-      font-size: 1.4rem;
-      margin-bottom: 4px;
-    }
-
-    .cs-title {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .cs-desc {
-      font-size: 0.82rem;
+    .example-moment {
+      font-size: 0.72rem;
       font-weight: 300;
       color: var(--muted);
-      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .example-post {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.55;
     }
 
     @media (max-width: 600px) {
-      .coming-soon-grid {
+      .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .examples-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1921,130 +1887,110 @@
 
 
   <!-- ════════════════════════════════════
-     SECTION 4 — WHO WE HELP
+     SOUND FAMILIAR?
 ════════════════════════════════════ -->
-  <section id="who" aria-label="Who we help">
+  <section id="sound-familiar" aria-label="Sound familiar?">
     <div class="section-wrap">
-      <div class="who-intro reveal">
-        <div class="eyebrow">Who we help</div>
-        <h2 class="section-headline">Built for businesses that<br><em>need results, not reports.</em></h2>
+      <div class="sf-intro reveal">
+        <div class="eyebrow">Sound familiar?</div>
+        <h2 class="section-headline">You're running the business.<br><em>Who's running your social media?</em></h2>
         <div class="gold-rule" aria-hidden="true"></div>
-        <p class="body-text">Whether you're a local UK business looking for consistent online presence, or an
-          India-facing consultancy reaching clients across borders — CNR Digital handles the content, so you can focus
-          on what you do best.</p>
       </div>
 
-      <div class="who-grid" role="list">
-        <div class="who-card reveal" role="listitem">
-          <div class="who-num">01</div>
-          <div class="who-title">Restaurants &amp; Takeaways</div>
-          <div class="who-desc">Menu posts, offers, seasonal campaigns — automated daily.</div>
+      <div class="sf-grid" role="list">
+        <div class="sf-card reveal" role="listitem">
+          <div class="sf-icon" aria-hidden="true">⏰</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Friday night was packed.</div>
+            <div class="sf-support">and you didn't have a moment to post about it.</div>
+          </div>
         </div>
-        <div class="who-card reveal reveal-delay-1" role="listitem">
-          <div class="who-num">02</div>
-          <div class="who-title">Local UK Businesses</div>
-          <div class="who-desc">Barbers, beauty salons, gyms — consistent presence without the effort.</div>
+        <div class="sf-card reveal reveal-delay-1" role="listitem">
+          <div class="sf-icon" aria-hidden="true">📵</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Last post was three weeks ago.</div>
+            <div class="sf-support">and you've been meaning to fix that.</div>
+          </div>
         </div>
-        <div class="who-card reveal reveal-delay-2" role="listitem">
-          <div class="who-num">03</div>
-          <div class="who-title">Study Abroad Consultants</div>
-          <div class="who-desc">Reach Indian students and families at the right moment.</div>
+        <div class="sf-card reveal" role="listitem">
+          <div class="sf-icon" aria-hidden="true">💷</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Got a quote from an agency.</div>
+            <div class="sf-support">and it was £800 a month. Ridiculous.</div>
+          </div>
         </div>
-        <div class="who-card reveal" role="listitem">
-          <div class="who-num">04</div>
-          <div class="who-title">Professional Services</div>
-          <div class="who-desc">Accountants, solicitors, estate agents — build trust online.</div>
+        <div class="sf-card reveal reveal-delay-1" role="listitem">
+          <div class="sf-icon" aria-hidden="true">🤔</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Tried doing it yourself.</div>
+            <div class="sf-support">and stared at a blank Canva for an hour.</div>
+          </div>
         </div>
-        <div class="who-card reveal reveal-delay-1" role="listitem">
-          <div class="who-num">05</div>
-          <div class="who-title">Retail &amp; E-commerce</div>
-          <div class="who-desc">Product launches, flash sales, brand storytelling.</div>
+        <div class="sf-card reveal" role="listitem">
+          <div class="sf-icon" aria-hidden="true">🌙</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Your customers are scrolling at 9pm.</div>
+            <div class="sf-support">and your business is invisible.</div>
+          </div>
         </div>
-        <div class="who-card reveal reveal-delay-2" role="listitem">
-          <div class="who-num">06</div>
-          <div class="who-title">Hospitality &amp; Events</div>
-          <div class="who-desc">Hotels, venues, event spaces — fill your calendar.</div>
+        <div class="sf-card reveal reveal-delay-1" role="listitem">
+          <div class="sf-icon" aria-hidden="true">📅</div>
+          <div class="sf-card-body">
+            <div class="sf-headline">Eid weekend is coming.</div>
+            <div class="sf-support">and you still haven't planned a post.</div>
+          </div>
         </div>
       </div>
-
-      <p class="who-note reveal">Don't see your industry? We work with any UK or India business that has customers worth
-        talking to.</p>
     </div>
   </section>
 
 
   <!-- ════════════════════════════════════
-     SECTION 5 — BRANDENGINE
+     WHAT WE DO FOR YOU
 ════════════════════════════════════ -->
-  <section id="brandengine" aria-label="BrandEngine">
+  <section id="what-we-do" aria-label="What we do for you">
     <div class="section-wrap">
-      <div class="brandengine-inner">
-        <div class="be-left">
-          <div class="eyebrow reveal">Our secret weapon</div>
-          <h2 class="section-headline reveal" style="font-style:italic;">We didn't buy an AI tool.<br><em>We built
-              one.</em></h2>
-          <div class="gold-rule reveal" aria-hidden="true"></div>
-          <p class="be-intro reveal">
-            BrandEngine is our proprietary AI content system — built entirely in-house by CNR Digital. While other
-            agencies use generic tools, we use an intelligent platform that knows your audience, follows UK advertising
-            standards automatically, and learns what content drives results for your specific business.
-          </p>
+      <div class="wwd-intro reveal">
+        <div class="eyebrow">What we do for you</div>
+        <h2 class="section-headline">We post for your business. Every day.<br><em>You approve. We do the rest.</em></h2>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <p class="body-text">Designed for busy owners who want it sorted, not explained.</p>
+      </div>
 
-          <div class="be-features">
-            <div class="be-feature reveal">
-              <span class="be-arrow" aria-hidden="true">→</span>
-              <div class="be-feature-body">
-                <div class="be-feature-title">Audience intelligence</div>
-                <div class="be-feature-desc">Knows who your customers are, when they're online, and what triggers them
-                  to buy.</div>
-              </div>
-            </div>
-            <div class="be-feature reveal reveal-delay-1">
-              <span class="be-arrow" aria-hidden="true">→</span>
-              <div class="be-feature-body">
-                <div class="be-feature-title">Compliance engine</div>
-                <div class="be-feature-desc">Every post checked against UK ASA CAP Code and Meta platform rules
-                  automatically — before it ever reaches you.</div>
-              </div>
-            </div>
-            <div class="be-feature reveal reveal-delay-2">
-              <span class="be-arrow" aria-hidden="true">→</span>
-              <div class="be-feature-body">
-                <div class="be-feature-title">Campaign calendar</div>
-                <div class="be-feature-desc">Knows Eid, Christmas, payday weekend and Premier League nights are coming —
-                  suggests campaigns automatically.</div>
-              </div>
-            </div>
-            <div class="be-feature reveal reveal-delay-3">
-              <span class="be-arrow" aria-hidden="true">→</span>
-              <div class="be-feature-body">
-                <div class="be-feature-title">Performance learning</div>
-                <div class="be-feature-desc">Tracks what works for your audience. Does more of what wins.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="be-cta-block reveal">
-            <p class="be-cta-text">Every CNR Digital client gets BrandEngine included.</p>
-            <a href="#pricing" class="btn btn-outline">See how it works →</a>
-          </div>
+      <div class="wwd-grid" role="list">
+        <div class="wwd-card reveal" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Always on</div>
+          <div class="wwd-desc">Posts go out daily, even Sundays. You never miss a day.</div>
         </div>
-
-        <div class="be-right reveal">
-          <div class="be-card">
-            <div class="be-card-label">BrandEngine generates a post in</div>
-            <div class="be-card-time">30s</div>
-            <ul class="be-card-list">
-              <li class="be-card-item">Checked against 3 layers of compliance rules</li>
-              <li class="be-card-item">Optimised for your specific audience</li>
-              <li class="be-card-item">Published to Facebook, Instagram, Google, WhatsApp, LinkedIn + YouTube</li>
-              <li class="be-card-item">While you focus on running your business</li>
-            </ul>
-            <a href="https://wa.me/447466378364" class="btn btn-solid" target="_blank" rel="noopener noreferrer"
-              style="width:100%;justify-content:center;">Get BrandEngine →</a>
-          </div>
+        <div class="wwd-card reveal reveal-delay-1" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Sounds like you</div>
+          <div class="wwd-desc">Knows your business, your offers, your tone of voice.</div>
+        </div>
+        <div class="wwd-card reveal reveal-delay-2" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Three options every time</div>
+          <div class="wwd-desc">Pick your favourite in seconds. Or trust our suggestion.</div>
+        </div>
+        <div class="wwd-card reveal" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Plans the year</div>
+          <div class="wwd-desc">Eid, Christmas, payday, bank holiday — sorted in advance.</div>
+        </div>
+        <div class="wwd-card reveal reveal-delay-1" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Never embarrasses you</div>
+          <div class="wwd-desc">We never make up prices, claims or testimonials.</div>
+        </div>
+        <div class="wwd-card reveal reveal-delay-2" role="listitem">
+          <div class="wwd-check" aria-hidden="true">✓</div>
+          <div class="wwd-title">Posts when people are watching</div>
+          <div class="wwd-desc">Friday 6pm. Sunday lunch. Whenever your customers scroll.</div>
         </div>
       </div>
+
+      <p class="wwd-note reveal">Restaurants, takeaways, beauty salons, education consultants, retail, hospitality, professional services — if your customers are online, we work with you.</p>
     </div>
   </section>
 
