@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Information — CNR Digital Ltd</title>
+  <meta name="description" content="Legal information for CNR Digital Ltd — company registration, registered office, and contact details.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #0f2040;
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --cream: #f7f5f0;
+      --text: #1a1a2e;
+      --muted: #5a5a72;
+      --border: #e2ddd4;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO BAND ── */
+    .hero-band {
+      background: var(--navy);
+      padding: 56px 40px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .hero-band h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-band p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── DETAIL TABLE ── */
+    .detail-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 48px 0 40px;
+    }
+    .detail-card h2 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .detail-row {
+      display: flex;
+      gap: 24px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0ede8;
+      font-size: 15px;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-label {
+      flex: 0 0 220px;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      padding-top: 1px;
+    }
+    .detail-value {
+      color: var(--text);
+      font-weight: 400;
+    }
+    .detail-value a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .detail-value a:hover { color: var(--gold); }
+
+    /* ── SECTIONS ── */
+    .legal-section {
+      margin-bottom: 44px;
+      scroll-margin-top: 80px;
+    }
+    .section-number {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .legal-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section p {
+      font-size: 15px;
+      color: #2e2e44;
+      margin-bottom: 14px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+
+    /* ── COMPANIES HOUSE BADGE ── */
+    .ch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: #e8f4fd;
+      border: 1px solid #b3d7f0;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a5276;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-top: 16px;
+    }
+    .ch-badge:hover { background: #d0eaf8; }
+    .ch-badge::before {
+      content: '↗';
+      font-size: 12px;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-top: 48px;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+    }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .contact-email:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer .footer-logo {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    footer .footer-logo span { color: var(--gold); }
+    footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+    footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero-band { padding: 40px 20px 36px; }
+      .detail-card { padding: 20px; }
+      .detail-row { flex-direction: column; gap: 4px; }
+      .detail-label { flex: none; }
+      .contact-card { padding: 28px 24px; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">CNR <span>Digital</span></a>
+  <div class="nav-links">
+    <a href="/#pricing">Pricing</a>
+    <a href="/#cta">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/legal.html" style="color:rgba(255,255,255,0.9);">Legal</a>
+  </div>
+</nav>
+
+<!-- HERO BAND -->
+<div class="hero-band">
+  <p class="hero-eyebrow">Company Information</p>
+  <h1>Legal Information</h1>
+  <p>Registered details for CNR Digital Ltd — the legal entity operating cnrdigital.co.uk.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- COMPANY DETAILS TABLE -->
+  <div class="detail-card">
+    <h2>Registered Company Details</h2>
+    <div class="detail-row">
+      <span class="detail-label">Legal name</span>
+      <span class="detail-value">CNR Digital Ltd</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Trading name</span>
+      <span class="detail-value">CNR Digital</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Company number</span>
+      <span class="detail-value">17185406</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Country of registration</span>
+      <span class="detail-value">England and Wales</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Incorporation date</span>
+      <span class="detail-value">28 April 2026</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Registered office</span>
+      <span class="detail-value">2 Coppidwell Drive, Aylesbury, England, HP21 9QF</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">VAT registration</span>
+      <span class="detail-value">Not VAT registered</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Website</span>
+      <span class="detail-value"><a href="https://cnrdigital.co.uk">cnrdigital.co.uk</a></span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Contact email</span>
+      <span class="detail-value"><a href="mailto:hello@cnrdigital.co.uk">hello@cnrdigital.co.uk</a></span>
+    </div>
+    <a href="https://find-and-update.company-information.service.gov.uk/company/17185406"
+       target="_blank" rel="noopener noreferrer" class="ch-badge">
+      Verify on Companies House
+    </a>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="legal-section">
+    <span class="section-number">01</span>
+    <h2>About CNR Digital Ltd</h2>
+    <p>CNR Digital Ltd is a social media management company incorporated in England and Wales. We provide daily social media posting, content creation, and platform management services to small businesses in the United Kingdom and India.</p>
+    <p>Our registered office is at 2 Coppidwell Drive, Aylesbury, England, HP21 9QF. The company is registered at Companies House under number 17185406.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="legal-section">
+    <span class="section-number">02</span>
+    <h2>Platform Authorisations</h2>
+    <p>CNR Digital Ltd operates API integrations with Meta (Facebook and Instagram), Google, LinkedIn, and other social platforms on behalf of clients. All platform access is granted by clients via official OAuth authorisation flows and may be revoked at any time through each platform's settings.</p>
+    <p>CNR Digital Ltd is the legal entity named in all API developer applications and Business Verification submissions to Meta, Google, and other platform operators.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="legal-section">
+    <span class="section-number">03</span>
+    <h2>Intellectual Property</h2>
+    <p>The CNR Digital name, logo, and all website content are the property of CNR Digital Ltd. All rights reserved. Nothing on this website constitutes a licence to use CNR Digital's intellectual property without prior written permission.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="legal-section">
+    <span class="section-number">04</span>
+    <h2>Governing Law</h2>
+    <p>These terms, and any dispute arising from your use of cnrdigital.co.uk or our services, are governed by the laws of England and Wales. The courts of England and Wales have exclusive jurisdiction over any such dispute.</p>
+  </div>
+
+  <!-- CONTACT CTA CARD -->
+  <div class="contact-card">
+    <div>
+      <h3>Legal enquiries</h3>
+      <p>For any legal or compliance questions, contact us directly.</p>
+    </div>
+    <a href="mailto:hello@cnrdigital.co.uk" class="contact-email">
+      ✉ hello@cnrdigital.co.uk
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CNR <span>Digital</span></div>
+  <p>© 2026 CNR Digital Ltd · Company No. 17185406 · Aylesbury, England</p>
+  <div style="display:flex; gap:20px;">
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/legal.html" style="color:rgba(255,255,255,0.75);">Legal</a>
+  </div>
+</footer>
+
+</body>
+</html>
